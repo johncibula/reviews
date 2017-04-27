@@ -1,7 +1,14 @@
 {
-  "dependencies": {
-    "babel-preset-react": "^6.24.1",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+  "name": "react-webpack-rails-tutorial",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "6.9.0",
+    "npm": "4.1.1"
+  },
+  "scripts": {
+    "postinstall": "cd client && yarn install",
+    "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
+    "test": "rspec"
   }
 }
