@@ -9,7 +9,7 @@ https://cp-pairing.herokuapp.com/
   * User Login / Authentication
   * CRUD users
   * User can CRUD reviews
-  
+
 
 ## Planning
 ### Model - erd diagram
@@ -28,9 +28,9 @@ https://cp-pairing.herokuapp.com/
 
 ## Team members
  * Mike - PM / Route Manager / Controller implementations
- * Brian -  Model Manger
- * Jin - Model designer / Controller implementations
+ * Brian -  KIA
+ * Jin - DOR
  * Raul - Generalist / Git / Branch managment
- 
+
 [configuration help](docs/running.md)
 
