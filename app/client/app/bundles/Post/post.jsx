@@ -1,4 +1,14 @@
+import ReactOnRails from 'react-on-rails';
+import Post from './Post';
+ReactOnRails.register({ HelloWorldApp });
+
 var Post = React.createClass({
+  getInitialState: function() {
+      return { id: this.props.id,
+                rating: this.props.rating,
+                content: this.props.content };
+  },
+
   handleDelete(id) {
     this.props.handleDelete(id)
 
