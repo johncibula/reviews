@@ -1,0 +1,18 @@
+<h2>Edit Review</h2>
+<%= link_to "Back", :back %>
+<p>
+  <%= form_for(@post) do |f| %>
+    <%= f.label :Feedback %>
+    <%= f.text_field :admin_message, class: 'form-control' %>
+    <%= f.label :Would_you_ever_work_with_them_again? %>
+    <%= f.text_field :willing_to_work, class: 'form-control' %>
+    <%= f.label :rating %>
+    <%= f.text_field :rating, class: 'form-control' %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.label :content %>
+    <%= f.text_field :content, class: 'form-control' %>
+    <br>
+    <%= f.submit "Save Changes", class: "btn btn-primary" %>
+  <% end %>
+</p>

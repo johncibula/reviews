@@ -1,0 +1,51 @@
+<%= form_for :post, url: posts_path do |f| %>
+  <% if @post.errors.any? %>
+      <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %>
+prohibited
+        this post from being saved:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h2>Who would you like to review?</h2>
+  <%= f.collection_select :recipient_id, User.all_except(current_user).order(:nickname),:id,:nickname, include_blank: true %>
+  <br>
+  <h2>What should the cadre know to help them improve?</h2>
+  <br>
+  <%= f.text_area :admin_message, style: 'width:100%;',:placeholder => "Jon, I think xyz is getting overwhelmed" %>
+  <br>
+  <h2>Would you want to pair with them again?</h2>
+  <br>
+  <div class="radio-group">
+    <%= f.radio_button :willing_to_work, "Never" %>
+    <%= label_tag(:never, "Never Again") %>
+    <br>
+    <%= f.radio_button :willing_to_work, "Possibly" %>
+    <%= label_tag(:possible, "If I had to") %>
+    <br>
+    <%= f.radio_button :willing_to_work, "Sure" %>
+    <%= label_tag(:meh, "Sure why not") %>
+    <br>
+    <%= f.radio_button :willing_to_work, "Yes" %>
+    <%= label_tag(:yes, "Yes I'd like to") %>
+    <br>
+    <%= f.radio_button :willing_to_work, "Absolutely" %>
+    <%= label_tag(:insist, "Always put us together!") %>
+    <br>
+  </div>
+  <h2>Overall how would rate working with them [0 - 5]?</h2>
+  <%= f.range_field :rating, :min=>0, :max=>5, :class=>"slide", :id=>"slider1"%>
+
+  <h2><h2>What are they doing great, what could they do better?</h2>
+  <%= f.text_area :content, style: 'width:100%;', :placeholder => "Hi, nice work but I felt that I you did not allow me to have enough input.  You should try to listen more.  Your should express your ideas more. I think you should ask for help more often, it's okay to not know something. " %>
+
+  <br>
+  <%= f.submit "submit", class: "btn btn-primary" %>
+<% end %>

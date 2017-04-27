@@ -1,0 +1,40 @@
+
+<%= link_to 'Write a new review', new_post_path %>
+<div class="posts index">
+  <h2> Received Reviews </h2>
+  <table class="listing" summary="Post list">
+    <tr>
+      <th> Title </th>
+      <th> Content </th>
+    </tr>
+    <% if @check_number == 0 %>
+      <% @received_posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= link_to 'Show', post_path(post), :class => 'show' %></td>
+      <td><%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+      <% end %>
+  <% else %>
+    NO REVIEWS
+  <% end %>
+  </table>
+
+  <table class="listing" summary="Post list">
+  <h2> Reviews I have written </h2>
+    <tr>
+      <th> Title </th>
+      <th> Content </th>
+    </tr>
+    <% @sent_posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= link_to 'Show', post_path(post), :class => 'action show' %></td>
+      <td><%= link_to 'Edit', edit_post_path(post), :class => 'action edit' %></td>
+      <td><%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

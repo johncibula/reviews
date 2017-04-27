@@ -1,0 +1,16 @@
+<table class="listing2" summary="Post list2">
+<h2> Admin </h2>
+  <tr>
+    <th> Title </th>
+    <th> Content </th>
+  </tr>
+  <% @all_posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= link_to 'Show', post_path(post), :class => 'action show' %></td>
+    <td><%= link_to 'Edit', edit_post_path(post), :class => 'action edit' %></td>
+    <td><%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+  </tr>
+  <% end %>
+</table>

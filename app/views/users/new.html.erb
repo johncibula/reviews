@@ -1,0 +1,9 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+<% if current_user %>
+  <%= link_to("Logout", "/signout") %>
+  Welcome <%= current_user.nickname %>
+
+<% else %>
+  <%= link_to "Sign in with Github", "/auth/github" %>
+<% end %>

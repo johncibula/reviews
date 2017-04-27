@@ -1,0 +1,101 @@
+2017-04-27T00:21:47.568741+00:00 app[web.1]: [97257557-ff9d-4a5a-87a8-16841160f19f]     18: 
+2017-04-27T00:21:47.568759+00:00 app[web.1]: F, [2017-04-27T00:21:47.568727 #4] FATAL -- : [97257557-ff9d-4a5a-87a8-16841160f19f]   
+2017-04-27T00:21:47.568799+00:00 app[web.1]: F, [2017-04-27T00:21:47.568761 #4] FATAL -- : [97257557-ff9d-4a5a-87a8-16841160f19f] app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__978015051663406206_70140300732300'
+2017-04-27T00:32:01.000000+00:00 app[api]: Build started by user johnjcibula@gmail.com
+2017-04-27T00:32:21.585875+00:00 app[api]: Release v53 created by user johnjcibula@gmail.com
+2017-04-27T00:32:21.585875+00:00 app[api]: Deploy 7b28884 by user johnjcibula@gmail.com
+2017-04-27T00:32:01.000000+00:00 app[api]: Build succeeded
+2017-04-27T00:32:22.199527+00:00 heroku[web.1]: Restarting
+2017-04-27T00:32:22.200122+00:00 heroku[web.1]: State changed from up to starting
+2017-04-27T00:32:22.154142+00:00 app[api]: Release v53 created by user johnjcibula@gmail.com
+2017-04-27T00:32:22.784843+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-04-27T00:32:22.791763+00:00 app[web.1]: === puma shutdown: 2017-04-27 00:32:22 +0000 ===
+2017-04-27T00:32:22.791750+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2017-04-27T00:32:22.791764+00:00 app[web.1]: - Goodbye!
+2017-04-27T00:32:22.791765+00:00 app[web.1]: Exiting
+2017-04-27T00:32:23.146195+00:00 heroku[web.1]: Process exited with status 0
+2017-04-27T00:32:25.924726+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 31588 -e production`
+2017-04-27T00:32:32.946254+00:00 heroku[web.1]: State changed from starting to up
+2017-04-27T00:32:32.777294+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2017-04-27T00:32:32.777274+00:00 app[web.1]: => Booting Puma
+2017-04-27T00:32:32.777300+00:00 app[web.1]: * Version 3.8.2 (ruby 2.2.6-p396), codename: Sassy Salamander
+2017-04-27T00:32:32.777293+00:00 app[web.1]: => Rails 5.0.2 application starting in production on http://0.0.0.0:31588
+2017-04-27T00:32:32.777294+00:00 app[web.1]: Puma starting in single mode...
+2017-04-27T00:32:32.777872+00:00 app[web.1]: Use Ctrl-C to stop
+2017-04-27T00:32:32.777301+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2017-04-27T00:32:32.777302+00:00 app[web.1]: * Environment: production
+2017-04-27T00:32:32.777417+00:00 app[web.1]: * Listening on tcp://0.0.0.0:31588
+2017-04-27T00:33:10.345767+00:00 heroku[router]: at=info method=GET path="/assets/application-ce878bb12b1aee23e0850950f8c911bde4500b900201844d1cafaa49465d2cf6.css" host=cp-pairing.herokuapp.com request_id=53161703-35e7-48ca-8303-ea8bdbd5b46d fwd="24.136.16.74" dyno=web.1 connect=0ms service=2ms status=200 bytes=20589 protocol=http
+2017-04-27T00:33:10.243570+00:00 heroku[router]: at=info method=GET path="/" host=cp-pairing.herokuapp.com request_id=ce5e8783-8d7a-4020-803f-75906cf0a2d9 fwd="24.136.16.74" dyno=web.1 connect=0ms service=29ms status=302 bytes=479 protocol=http
+2017-04-27T00:33:10.297219+00:00 heroku[router]: at=info method=GET path="/sessions/new" host=cp-pairing.herokuapp.com request_id=40c956e4-2797-4580-83bf-307aca8a3583 fwd="24.136.16.74" dyno=web.1 connect=1ms service=13ms status=200 bytes=1611 protocol=http
+2017-04-27T00:33:10.215657+00:00 app[web.1]: I, [2017-04-27T00:33:10.215528 #4]  INFO -- : [ce5e8783-8d7a-4020-803f-75906cf0a2d9] Started GET "/" for 24.136.16.74 at 2017-04-27 00:33:10 +0000
+2017-04-27T00:33:10.223421+00:00 app[web.1]: I, [2017-04-27T00:33:10.223328 #4]  INFO -- : [ce5e8783-8d7a-4020-803f-75906cf0a2d9] Processing by PostsController#index as HTML
+2017-04-27T00:33:10.239915+00:00 app[web.1]: I, [2017-04-27T00:33:10.239851 #4]  INFO -- : [ce5e8783-8d7a-4020-803f-75906cf0a2d9] Filter chain halted as :require_login rendered or redirected
+2017-04-27T00:33:10.239777+00:00 app[web.1]: I, [2017-04-27T00:33:10.239650 #4]  INFO -- : [ce5e8783-8d7a-4020-803f-75906cf0a2d9] Redirected to http://cp-pairing.herokuapp.com/sessions/new
+2017-04-27T00:33:10.284142+00:00 app[web.1]: I, [2017-04-27T00:33:10.284051 #4]  INFO -- : [40c956e4-2797-4580-83bf-307aca8a3583] Started GET "/sessions/new" for 24.136.16.74 at 2017-04-27 00:33:10 +0000
+2017-04-27T00:33:10.286264+00:00 app[web.1]: I, [2017-04-27T00:33:10.286200 #4]  INFO -- : [40c956e4-2797-4580-83bf-307aca8a3583] Processing by SessionsController#new as HTML
+2017-04-27T00:33:10.240717+00:00 app[web.1]: I, [2017-04-27T00:33:10.240078 #4]  INFO -- : [ce5e8783-8d7a-4020-803f-75906cf0a2d9] Completed 302 Found in 17ms
+2017-04-27T00:33:10.289703+00:00 app[web.1]: I, [2017-04-27T00:33:10.289618 #4]  INFO -- : [40c956e4-2797-4580-83bf-307aca8a3583]   Rendering sessions/new.html.erb within layouts/application
+2017-04-27T00:33:10.290511+00:00 app[web.1]: I, [2017-04-27T00:33:10.290451 #4]  INFO -- : [40c956e4-2797-4580-83bf-307aca8a3583]   Rendered sessions/new.html.erb within layouts/application (0.7ms)
+2017-04-27T00:33:10.293117+00:00 app[web.1]: I, [2017-04-27T00:33:10.293058 #4]  INFO -- : [40c956e4-2797-4580-83bf-307aca8a3583]   Rendered layouts/_header.html.erb (0.3ms)
+2017-04-27T00:33:10.293450+00:00 app[web.1]: I, [2017-04-27T00:33:10.293388 #4]  INFO -- : [40c956e4-2797-4580-83bf-307aca8a3583] Completed 200 OK in 7ms (Views: 5.7ms)
+2017-04-27T00:33:10.448724+00:00 heroku[router]: at=info method=GET path="/assets/application-7a9bc55358d70634f4e5d1539929eabcd80cee67ec1f2f9e8e4a21f1d88f24e6.js" host=cp-pairing.herokuapp.com request_id=ebd42a83-347d-414b-b716-e84922bcb556 fwd="24.136.16.74" dyno=web.1 connect=1ms service=6ms status=200 bytes=77019 protocol=http
+2017-04-27T00:33:10.846163+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cp-pairing.herokuapp.com request_id=847fbba8-acd0-4107-8ce0-876c8d1ea888 fwd="24.136.16.74" dyno=web.1 connect=0ms service=1ms status=200 bytes=143 protocol=http
+2017-04-27T00:33:12.704744+00:00 heroku[router]: at=info method=GET path="/auth/github" host=cp-pairing.herokuapp.com request_id=f9e86669-4e67-46e3-a613-2dfac736acf9 fwd="24.136.16.74" dyno=web.1 connect=0ms service=11ms status=302 bytes=1269 protocol=http
+2017-04-27T00:33:12.693700+00:00 app[web.1]: I, [2017-04-27T00:33:12.693632 #4]  INFO -- omniauth: (github) Request phase initiated.
+2017-04-27T00:33:12.692815+00:00 app[web.1]: I, [2017-04-27T00:33:12.692708 #4]  INFO -- : [f9e86669-4e67-46e3-a613-2dfac736acf9] Started GET "/auth/github" for 24.136.16.74 at 2017-04-27 00:33:12 +0000
+2017-04-27T00:33:25.507088+00:00 heroku[router]: at=info method=GET path="/auth/github/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23redirect-uri-mismatch&state=712ed01037d2c7a22230ba18d5f1ea43ed62adb6a8fa59b7" host=cp-pairing.herokuapp.com request_id=9b826c38-3631-42e9-aba5-7585c00f05aa fwd="24.136.16.74" dyno=web.1 connect=0ms service=5ms status=302 bytes=767 protocol=https
+2017-04-27T00:33:25.502063+00:00 app[web.1]: I, [2017-04-27T00:33:25.501968 #4]  INFO -- : [9b826c38-3631-42e9-aba5-7585c00f05aa] Started GET "/auth/github/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23redirect-uri-mismatch&state=712ed01037d2c7a22230ba18d5f1ea43ed62adb6a8fa59b7" for 24.136.16.74 at 2017-04-27 00:33:25 +0000
+2017-04-27T00:33:25.502879+00:00 app[web.1]: I, [2017-04-27T00:33:25.502833 #4]  INFO -- omniauth: (github) Callback phase initiated.
+2017-04-27T00:33:25.503902+00:00 app[web.1]: E, [2017-04-27T00:33:25.503794 #4] ERROR -- omniauth: (github) Authentication failure! redirect_uri_mismatch: OmniAuth::Strategies::OAuth2::CallbackError, redirect_uri_mismatch | The redirect_uri MUST match the registered callback URL for this application. | https://developer.github.com/v3/oauth/#redirect-uri-mismatch
+2017-04-27T00:33:30.353465+00:00 heroku[router]: at=info method=GET path="/sessions/new" host=cp-pairing.herokuapp.com request_id=42c07b83-c0fd-4149-8987-e0a1159d2e0b fwd="24.136.16.74" dyno=web.1 connect=1ms service=7ms status=200 bytes=1611 protocol=https
+2017-04-27T00:33:30.245543+00:00 app[web.1]: I, [2017-04-27T00:33:30.245317 #4]  INFO -- : [66d2dbed-4e07-4c55-a945-d2a87a52e5c1] Started GET "/" for 24.136.16.74 at 2017-04-27 00:33:30 +0000
+2017-04-27T00:33:30.249285+00:00 app[web.1]: I, [2017-04-27T00:33:30.249217 #4]  INFO -- : [66d2dbed-4e07-4c55-a945-d2a87a52e5c1] Processing by PostsController#index as HTML
+2017-04-27T00:33:30.250145+00:00 app[web.1]: I, [2017-04-27T00:33:30.250086 #4]  INFO -- : [66d2dbed-4e07-4c55-a945-d2a87a52e5c1] Redirected to https://cp-pairing.herokuapp.com/sessions/new
+2017-04-27T00:33:30.250254+00:00 app[web.1]: I, [2017-04-27T00:33:30.250195 #4]  INFO -- : [66d2dbed-4e07-4c55-a945-d2a87a52e5c1] Filter chain halted as :require_login rendered or redirected
+2017-04-27T00:33:30.250410+00:00 app[web.1]: I, [2017-04-27T00:33:30.250348 #4]  INFO -- : [66d2dbed-4e07-4c55-a945-d2a87a52e5c1] Completed 302 Found in 1ms
+2017-04-27T00:33:30.311252+00:00 app[web.1]: I, [2017-04-27T00:33:30.311158 #4]  INFO -- : [42c07b83-c0fd-4149-8987-e0a1159d2e0b] Started GET "/sessions/new" for 24.136.16.74 at 2017-04-27 00:33:30 +0000
+2017-04-27T00:33:30.312588+00:00 app[web.1]: I, [2017-04-27T00:33:30.312515 #4]  INFO -- : [42c07b83-c0fd-4149-8987-e0a1159d2e0b] Processing by SessionsController#new as HTML
+2017-04-27T00:33:30.313474+00:00 app[web.1]: I, [2017-04-27T00:33:30.313411 #4]  INFO -- : [42c07b83-c0fd-4149-8987-e0a1159d2e0b]   Rendering sessions/new.html.erb within layouts/application
+2017-04-27T00:33:30.313739+00:00 app[web.1]: I, [2017-04-27T00:33:30.313678 #4]  INFO -- : [42c07b83-c0fd-4149-8987-e0a1159d2e0b]   Rendered sessions/new.html.erb within layouts/application (0.1ms)
+2017-04-27T00:33:30.315134+00:00 app[web.1]: I, [2017-04-27T00:33:30.315067 #4]  INFO -- : [42c07b83-c0fd-4149-8987-e0a1159d2e0b]   Rendered layouts/_header.html.erb (0.1ms)
+2017-04-27T00:33:30.315495+00:00 app[web.1]: I, [2017-04-27T00:33:30.315432 #4]  INFO -- : [42c07b83-c0fd-4149-8987-e0a1159d2e0b] Completed 200 OK in 3ms (Views: 2.4ms)
+2017-04-27T00:33:30.465735+00:00 app[web.1]: I, [2017-04-27T00:33:30.465645 #4]  INFO -- : [4662dcde-ae1b-4680-87b6-ce44a3016b35] Started GET "/auth/failure?message=redirect_uri_mismatch&origin=http%3A%2F%2Fcp-pairing.herokuapp.com%2Fsessions%2Fnew&strategy=github" for 24.136.16.74 at 2017-04-27 00:33:30 +0000
+2017-04-27T00:33:30.467075+00:00 app[web.1]: F, [2017-04-27T00:33:30.467012 #4] FATAL -- : [4662dcde-ae1b-4680-87b6-ce44a3016b35]   
+2017-04-27T00:33:30.467186+00:00 app[web.1]: F, [2017-04-27T00:33:30.467086 #4] FATAL -- : [4662dcde-ae1b-4680-87b6-ce44a3016b35] ActionController::RoutingError (No route matches [GET] "/auth/failure"):
+2017-04-27T00:33:30.467225+00:00 app[web.1]: F, [2017-04-27T00:33:30.467171 #4] FATAL -- : [4662dcde-ae1b-4680-87b6-ce44a3016b35]   
+2017-04-27T00:33:30.467312+00:00 app[web.1]: F, [2017-04-27T00:33:30.467249 #4] FATAL -- : [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+2017-04-27T00:33:30.467313+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+2017-04-27T00:33:30.467314+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:36:in `call_app'
+2017-04-27T00:33:30.467314+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:24:in `block in call'
+2017-04-27T00:33:30.467315+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+2017-04-27T00:33:30.467315+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:26:in `tagged'
+2017-04-27T00:33:30.467316+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/activesupport-5.0.2/lib/active_support/tagged_logging.rb:69:in `tagged'
+2017-04-27T00:33:30.467328+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/railties-5.0.2/lib/rails/rack/logger.rb:24:in `call'
+2017-04-27T00:33:30.467329+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/request_id.rb:24:in `call'
+2017-04-27T00:33:30.467329+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/rack-2.0.1/lib/rack/method_override.rb:22:in `call'
+2017-04-27T00:33:30.467330+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/rack-2.0.1/lib/rack/runtime.rb:22:in `call'
+2017-04-27T00:33:30.467330+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/activesupport-5.0.2/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+2017-04-27T00:33:30.467331+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/executor.rb:12:in `call'
+2017-04-27T00:33:30.467331+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/static.rb:136:in `call'
+2017-04-27T00:33:30.467332+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/rack-2.0.1/lib/rack/sendfile.rb:111:in `call'
+2017-04-27T00:33:30.467364+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/railties-5.0.2/lib/rails/engine.rb:522:in `call'
+2017-04-27T00:33:30.467365+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/puma-3.8.2/lib/puma/configuration.rb:224:in `call'
+2017-04-27T00:33:30.467365+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/puma-3.8.2/lib/puma/server.rb:600:in `handle_request'
+2017-04-27T00:33:30.467366+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/puma-3.8.2/lib/puma/server.rb:435:in `process_client'
+2017-04-27T00:33:30.467366+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/puma-3.8.2/lib/puma/server.rb:299:in `block in run'
+2017-04-27T00:33:30.467366+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/puma-3.8.2/lib/puma/thread_pool.rb:120:in `call'
+2017-04-27T00:33:30.467367+00:00 app[web.1]: [4662dcde-ae1b-4680-87b6-ce44a3016b35] vendor/bundle/ruby/2.2.0/gems/puma-3.8.2/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+2017-04-27T00:33:30.293047+00:00 heroku[router]: at=info method=GET path="/" host=cp-pairing.herokuapp.com request_id=66d2dbed-4e07-4c55-a945-d2a87a52e5c1 fwd="24.136.16.74" dyno=web.1 connect=1ms service=14ms status=302 bytes=816 protocol=https
+2017-04-27T00:33:30.470142+00:00 heroku[router]: at=info method=GET path="/auth/failure?message=redirect_uri_mismatch&origin=http%3A%2F%2Fcp-pairing.herokuapp.com%2Fsessions%2Fnew&strategy=github" host=cp-pairing.herokuapp.com request_id=4662dcde-ae1b-4680-87b6-ce44a3016b35 fwd="24.136.16.74" dyno=web.1 connect=0ms service=4ms status=404 bytes=1744 protocol=https
+2017-04-27T00:33:30.413264+00:00 heroku[router]: at=info method=GET path="/assets/application-7a9bc55358d70634f4e5d1539929eabcd80cee67ec1f2f9e8e4a21f1d88f24e6.js" host=cp-pairing.herokuapp.com request_id=d33743c9-b9dc-47d6-a23c-012935e8ed5b fwd="24.136.16.74" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2017-04-27T00:33:31.179260+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cp-pairing.herokuapp.com request_id=f0b9b3eb-1fc8-4c78-a25e-4db38245662c fwd="24.136.16.74" dyno=web.1 connect=0ms service=1ms status=200 bytes=143 protocol=https
+2017-04-27T00:33:36.074693+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cp-pairing.herokuapp.com request_id=6458a5d1-38f5-490e-8ddb-ad0ccee2023d fwd="24.136.16.74" dyno=web.1 connect=1ms service=1ms status=200 bytes=143 protocol=https
+2017-04-27T00:33:38.082914+00:00 heroku[router]: at=info method=GET path="/sessions/new" host=cp-pairing.herokuapp.com request_id=a2e84185-75d3-42a4-834e-2fa803696a4f fwd="54.174.33.17" dyno=web.1 connect=0ms service=23ms status=200 bytes=1611 protocol=https
+2017-04-27T00:33:38.147772+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cp-pairing.herokuapp.com request_id=7ec5c4d6-6856-4ee5-b9b4-7006005879de fwd="52.54.222.230" dyno=web.1 connect=0ms service=2ms status=200 bytes=143 protocol=https
+2017-04-27T00:33:38.063859+00:00 app[web.1]: I, [2017-04-27T00:33:38.063771 #4]  INFO -- : [a2e84185-75d3-42a4-834e-2fa803696a4f] Started GET "/sessions/new" for 54.174.33.17 at 2017-04-27 00:33:38 +0000
+2017-04-27T00:33:38.069662+00:00 app[web.1]: I, [2017-04-27T00:33:38.069610 #4]  INFO -- : [a2e84185-75d3-42a4-834e-2fa803696a4f]   Rendering sessions/new.html.erb within layouts/application
+2017-04-27T00:33:38.075542+00:00 app[web.1]: I, [2017-04-27T00:33:38.075488 #4]  INFO -- : [a2e84185-75d3-42a4-834e-2fa803696a4f]   Rendered layouts/_header.html.erb (0.4ms)
+2017-04-27T00:33:38.065511+00:00 app[web.1]: I, [2017-04-27T00:33:38.065461 #4]  INFO -- : [a2e84185-75d3-42a4-834e-2fa803696a4f] Processing by SessionsController#new as */*
+2017-04-27T00:33:38.079924+00:00 app[web.1]: I, [2017-04-27T00:33:38.079869 #4]  INFO -- : [a2e84185-75d3-42a4-834e-2fa803696a4f] Completed 200 OK in 14ms (Views: 9.8ms)
+2017-04-27T00:33:38.070446+00:00 app[web.1]: I, [2017-04-27T00:33:38.070389 #4]  INFO -- : [a2e84185-75d3-42a4-834e-2fa803696a4f]   Rendered sessions/new.html.erb within layouts/application (0.6ms)
