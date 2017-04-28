@@ -10,5 +10,11 @@
     "postinstall": "cd client && yarn install",
     "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
     "test": "rspec"
+  },
+  "dependencies": {
+    "dayz": "^0.6.5",
+    "moment-range": "^2.2.0",
+    "react": "^0.14.9",
+    "react-big-calendar": "^0.13.0"
   }
 }
