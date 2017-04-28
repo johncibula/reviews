@@ -1884,3 +1884,14 @@ ActionView::Template::Error (undefined method `title' for #<Post:0x007fb310533cf
   
 app/views/posts/edit.html.erb:12:in `block in _app_views_posts_edit_html_erb___3746622892108660608_70203524876540'
 app/views/posts/edit.html.erb:4:in `_app_views_posts_edit_html_erb___3746622892108660608_70203524876540'
+Started GET "/" for ::1 at 2017-04-28 11:16:45 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_menu.html.erb (0.4ms)
+Completed 200 OK in 284ms (Views: 225.1ms | ActiveRecord: 27.1ms)
+
+
