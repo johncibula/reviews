@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-
-
   get 'money', to: 'hello_world#index'
   root to: "posts#index"
   get "/auth/:provider/callback" => "sessions#create"
