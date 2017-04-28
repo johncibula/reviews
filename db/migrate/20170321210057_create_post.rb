@@ -7,6 +7,7 @@ class CreatePost < ActiveRecord::Migration[5.0]
       t.string :recipient_id, null: false
       t.integer :rating, null: false
       t.string :willing_to_work, default: "sure", null: false
+
       t.timestamps
       t.index([:sender_id, :recipient_id], unique: false)
     end

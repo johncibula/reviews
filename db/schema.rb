@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321210057) do
+ActiveRecord::Schema.define(version: 20170428193944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pgcrypto"
+
+  create_table "pairing_sessions", force: :cascade do |t|
+    t.string   "day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.text     "admin_message",                    null: false
@@ -28,11 +34,18 @@ ActiveRecord::Schema.define(version: 20170321210057) do
     t.index ["sender_id", "recipient_id"], name: "index_posts_on_sender_id_and_recipient_id", using: :btree
   end
 
+  create_table "user_pairing_sessions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "pairing_sessions_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string  "email"
     t.string  "provider",         null: false
     t.string  "uid",              null: false
-    t.string  "name",             null: false
+    t.string  "name"
     t.string  "nickname"
     t.string  "repos_url"
     t.boolean "admin"
