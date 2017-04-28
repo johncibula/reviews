@@ -1884,3 +1884,29 @@ ActionView::Template::Error (undefined method `title' for #<Post:0x007fb310533cf
   
 app/views/posts/edit.html.erb:12:in `block in _app_views_posts_edit_html_erb___3746622892108660608_70203524876540'
 app/views/posts/edit.html.erb:4:in `_app_views_posts_edit_html_erb___3746622892108660608_70203524876540'
+Started GET "/" for ::1 at 2017-04-28 13:20:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (820.1ms)
+  Rendered layouts/_menu.html.erb (1.7ms)
+Completed 200 OK in 2746ms (Views: 2623.2ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/signout" for ::1 at 2017-04-28 13:20:55 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-04-28 13:20:55 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 66.1ms | ActiveRecord: 0.0ms)
+
+
