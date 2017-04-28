@@ -1,15 +1,15 @@
 import React from 'react'
 export default class Post extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-                  id: this.props.id,
-                  rating: this.props.rating,
-                  content: this.props.content
-                };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //                 id: this.props.id,
+  //                 rating: this.props.rating,
+  //                 content: this.props.content
+  //               };
 
-  }
+  // }
 
   handleDelete(id) {
     this.props.handleDelete(id)
@@ -19,14 +19,14 @@ export default class Post extends React.Component {
   render() {
       return (
         <div className="post">
-            <a href={"/posts/" + this.state.id + "/edit"}>Edit</a>
+            <a href={"/posts/" + this.props.post.id + "/edit"}>Edit</a>
             <br />
-            <a href={"/posts/" + this.state.id}>Show</a>
-            <button onClick={this.handleDelete.bind(this,this.state.id)}>
+            <a href={"/posts/" + this.props.post.id}>Show</a>
+            <button onClick={this.handleDelete.bind(this,this.props.post.id)}>
               Delete
             </button>
-            <PostHeader post={this.state} />
-            <PostContent post={this.state} />
+            <PostHeader post={this.props.post} />
+            <PostContent post={this.props.post} />
         </div>
       );
   }
@@ -34,6 +34,7 @@ export default class Post extends React.Component {
 
 var PostHeader = React.createClass({
     render: function() {
+      console.log('this')
       console.log(this)
         return (
             <div className="post-header">
