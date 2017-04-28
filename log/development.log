@@ -1028,3 +1028,109 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for ::1 at 2017-04-27 21:27:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendered posts/index.html.erb within layouts/application (412.0ms)
+Completed 500 Internal Server Error in 824ms (ActiveRecord: 15.6ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'react_router' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jr/Desktop/final_project/reviews/app/assets/config
+  /Users/jr/Desktop/final_project/reviews/app/assets/images
+  /Users/jr/Desktop/final_project/reviews/app/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/app/assets/stylesheets
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>Pairing Reviews</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___222460306747212666_70202734926560'
+Started GET "/" for ::1 at 2017-04-27 21:29:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendered posts/index.html.erb within layouts/application (401.3ms)
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 1914ms (Views: 1842.7ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/signout" for ::1 at 2017-04-27 21:29:15 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-04-27 21:29:15 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 92ms (Views: 89.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for ::1 at 2017-04-27 21:29:17 -0500
+Started GET "/auth/github/callback?code=87164fa4d7def7dc4fee&state=539d1435671e9cd0948c4a23e943eb7c8299f8fa106ec318" for ::1 at 2017-04-27 21:29:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"87164fa4d7def7dc4fee", "state"=>"539d1435671e9cd0948c4a23e943eb7c8299f8fa106ec318", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "github"], ["uid", "22372633"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 21:29:18 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 50.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/b8b20792-277f-4bcb-baa6-b9fd5cc62732/edit" for ::1 at 2017-04-27 21:29:28 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"b8b20792-277f-4bcb-baa6-b9fd5cc62732"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "b8b20792-277f-4bcb-baa6-b9fd5cc62732"], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (36.1ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Post:0x007faa96fdc328>):
+     9:     <%= f.label :rating %>
+    10:     <%= f.text_field :rating, class: 'form-control' %>
+    11:     <%= f.label :title %>
+    12:     <%= f.text_field :title, class: 'form-control' %>
+    13:     <%= f.label :content %>
+    14:     <%= f.text_field :content, class: 'form-control' %>
+    15:     <br>
+  
+app/views/posts/edit.html.erb:12:in `block in _app_views_posts_edit_html_erb___200016694547398886_70185330857760'
+app/views/posts/edit.html.erb:4:in `_app_views_posts_edit_html_erb___200016694547398886_70185330857760'
