@@ -9,14 +9,5 @@
 </div>
 <div class="posts index">
   <h2> Reviews I have written </h2>
-    <% @sent_posts.each do |post| %>
-      <ul>
-        <li><%= react_component("Post", props: {
-                                                  id: post.id,
-                                                  rating: post.rating,
-                                                  content: post.content
-                                                },
-                                        prerender: false) %></li>
-      </ul>
-    <% end %>
+    <%= react_component("PostList", props: @sent_posts_test, prerender: false)  %>
 </div>

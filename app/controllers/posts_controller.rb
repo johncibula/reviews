@@ -9,6 +9,7 @@ class PostsController < ApplicationController
       # @received_posts = @received_posts.serialize_hash
       check_post_count
       @sent_posts = Post.sent_posts(current_user)
+      @sent_posts_test = instance_to_hash(sent_posts)
     end
   end
 
@@ -81,11 +82,12 @@ class PostsController < ApplicationController
     end
   end
 
-  # def instance_to_hash(instance_variable)
-  #   hash = {}
-  #   instance_variable.each_with_index do |instance,key|
-  #     hash[key] = instance
-  #   end
-  # end
+  def instance_to_hash(instance_variable)
+    hash = {}
+    instance_variable.each do |instance|
+      hash[instance.id] = instance
+    end
+    hash
+  end
 
 end
