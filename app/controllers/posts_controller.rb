@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
+  attr_accessor :sent_posts
 
   def index
     if !current_user
       redirect_to('/sessions/new')
     else
       @received_posts = Post.received_posts(current_user)
+      # @received_posts = @received_posts.serialize_hash
       check_post_count
       @sent_posts = Post.sent_posts(current_user)
     end
@@ -79,17 +81,11 @@ class PostsController < ApplicationController
     end
   end
 
-
-
-
-
-
-
-
-
-
-
-
-
+  # def instance_to_hash(instance_variable)
+  #   hash = {}
+  #   instance_variable.each_with_index do |instance,key|
+  #     hash[key] = instance
+  #   end
+  # end
 
 end

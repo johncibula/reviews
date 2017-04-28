@@ -9,7 +9,7 @@ https://cp-pairing.herokuapp.com/
   * User Login / Authentication
   * CRUD users
   * User can CRUD reviews
-  
+
 
 ## Planning
 ### Model - erd diagram
@@ -31,6 +31,6 @@ https://cp-pairing.herokuapp.com/
  * Brian -  KIA
  * Jin - DOR
  * Raul - Generalist / Git / Branch managment
- 
+
 [configuration help](docs/running.md)
 
