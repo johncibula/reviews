@@ -30,15 +30,25 @@
     overflow: auto;
     padding-bottom: 20px;
   }
-  .radio-group{
-    padding-left: 80px;
-  }
+.radio-group{
+  padding-left: 80px;
+}
+.main {
+  float: right;
+  width:85%;
+  background: yellow;
+}
+
 
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
     overflow: hidden;
     width: 110%;
+
+    position:absolute;
+    left:0; right:0;
+    height: 92px;
 
 }
 
@@ -91,4 +101,21 @@
 
 .listing td{
   padding: 10px;
+}
+
+.sidebar {
+    float:left;
+    left:0; top:92px; bottom: 0;
+    width: 15%;
+    background-color: grey;
+}
+
+.footer {
+  background-color:orange;
+  width: 120%;
+}
+
+.footer h3 {
+  margin: auto;
+  margin-top: 15vh;
 }
