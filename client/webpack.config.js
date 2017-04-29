@@ -15,8 +15,12 @@ const config = {
     // './app/bundles/HelloWorld/startup/registration',
     './app/bundles/Post/startup/registration',
     './app/bundles/PostList/startup/registration',
+<<<<<<< HEAD
     './app/bundles/Calendar/startup/registration',
     './app/bundles/NewReview/startup/registration'
+=======
+    './app/bundles/Calendar/startup/registration'
+>>>>>>> add-calender
 
   ],
 
