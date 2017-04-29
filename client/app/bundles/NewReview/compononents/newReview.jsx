@@ -1,5 +1,5 @@
 import React from 'react'
-export default class NewPost extends React.Component {
+export default class NewReview extends React.Component {
 
   constructor(props) {
     super(props);

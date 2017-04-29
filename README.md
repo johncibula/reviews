@@ -1,4 +1,6 @@
 # Pairing
+## Running 
+`foreman start -f Procfile.dev`
 ## Test Drive
 https://cp-pairing.herokuapp.com/
 ## Paring Project Requirements

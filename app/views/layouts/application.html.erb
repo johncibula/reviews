@@ -17,7 +17,13 @@
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    
+    <div class="main">
+      <%= yield %>
+
+    </div>
+    <%= render "layouts/side_bar" %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
 

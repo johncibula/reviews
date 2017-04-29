@@ -10,11 +10,11 @@ export default class Calendar extends React.Component {
               <th style={{border: "1px solid black"}}>Day</th>
               <th style={{border: "1px solid black"}}>Pair</th> 
             </tr>
-            <Day day="Mon"/>
-            <Day day="Tue"/>
-            <Day day="Weds"/>
-            <Day day="Thur"/>
-            <Day day="Frid"/>
+            <Day day="Monday" pair="Mike L"/>
+            <Day day="Tuesday" pair="Scott" />
+            <Day day="Wednesday" pair="Jin"/>
+            <Day day="Thursday" pair="Matt"/>
+            <Day day="Friday" pair="Brian"/>
           </table>
         </div>
       );
