@@ -13,10 +13,12 @@ export default class Post extends React.Component {
 
   handleDelete(id) {
     this.props.handleDelete(id)
+    this.props.that.removeItemClient(id)
 
   }
 
   render() {
+
       return (
         <div className="post">
             <a href={"/posts/" + this.props.post.id + "/edit"}>Edit</a>
@@ -34,8 +36,6 @@ export default class Post extends React.Component {
 
 var PostHeader = React.createClass({
     render: function() {
-      console.log('this')
-      console.log(this)
         return (
             <div className="post-header">
                 <h2>{this.props.post.rating}</h2>

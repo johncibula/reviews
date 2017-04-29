@@ -57,7 +57,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.destroy
       flash[:notice] = "Successfully deleted post!"
-      redirect_to posts_path
+      # redirect_to posts_path
     else
       flash[:alert] = "Errors deleting post!"
       render 'destroy'
