@@ -13,7 +13,9 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def generate_pairs
-    pairs =  User.all.to_a.combination(2).to_a
+  def generate_pairs(user = current_user)
+    #TODO Make algorithim that make Pairs and stores current users
+    #Use Model
+    {}
   end
 end
