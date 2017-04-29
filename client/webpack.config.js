@@ -14,10 +14,9 @@ const config = {
     'babel-polyfill',
     // './app/bundles/HelloWorld/startup/registration',
     './app/bundles/Post/startup/registration',
-    './app/bundles/PostList/startup/registration'
-    './app/bundles/HelloWorld/startup/registration',
-    './app/bundles/Post/startup/registration',
-    './app/bundles/Calendar/startup/registration'
+    './app/bundles/PostList/startup/registration',
+    './app/bundles/Calendar/startup/registration',
+    './app/bundles/NewReview/startup/registration'
 
   ],
 
