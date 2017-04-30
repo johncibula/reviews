@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
   end
 
   def generate_pairs(user = current_user)
-    CalendarController.pairing_schedule(user)
+    #TODO Make algorithim that make Pairs and stores current users
+    #Use Model
+    {}
   end
 end
