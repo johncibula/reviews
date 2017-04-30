@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  attr_accessor :sent_posts
+  attr_accessor :sent_posts, :users
 
   def index
     if !current_user
@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @users = User.all_except(current_user)
+    @users = instance_to_hash(users)
   end
 
   def create
