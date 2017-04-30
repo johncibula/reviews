@@ -11,7 +11,7 @@ class CalendarController < ApplicationController
     
     size_of_week.times do
       groups = users.shuffle.each_slice(group_size).to_a
-      UsersController.create_day_schedule(groups, weekday_indice)
+      CalendarController.create_day_schedule(groups, weekday_indice)
       weekday_indice += 1
     end
   end
@@ -23,7 +23,7 @@ class CalendarController < ApplicationController
     groups.each do | group |
       if group.size > 1
         pairing_session = PairingSessions.create(day: DAYS[weekday_indice])
-        UsersController.connect_groups_to_pairing_session(group, pairing_session)
+        CalendarController.connect_groups_to_pairing_session(group, pairing_session)
       end
     end
   end
