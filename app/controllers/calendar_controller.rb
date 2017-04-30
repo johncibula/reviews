@@ -1,15 +1,15 @@
 class CalendarController < ApplicationController
 
-  def self.create_weekly_schedule ( group_size: , size_of_week:)
+  def self.create_weekly_schedule ( group_size: 2, sessions: 5)
     #return nil if !current_user.admin
-    group_size = 2 if group_size.class != Number || group_size < 2 
-    size_of_week = 1 if  size_of_week.class != Number || size_of_week < 1
-    size_of_week = 5 if size_of_week > 5
+    group_size = 2 if group_size.class != Integer || group_size < 2 
+    sessions = 1 if  sessions.class != Integer || sessions < 1
+    sessions = 5 if sessions > 5
     
-    users = Users.all
+    users = User.all
     weekday_indice = 0
     
-    size_of_week.times do
+    sessions.times do
       groups = users.shuffle.each_slice(group_size).to_a
       CalendarController.create_day_schedule(groups, weekday_indice)
       weekday_indice += 1
@@ -19,10 +19,10 @@ class CalendarController < ApplicationController
   private 
 
   def self.create_day_schedule(groups, weekday_indice)
-    DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     groups.each do | group |
       if group.size > 1
-        pairing_session = PairingSessions.create(day: DAYS[weekday_indice])
+        pairing_session = PairingSession.create(day: days[weekday_indice])
         CalendarController.connect_groups_to_pairing_session(group, pairing_session)
       end
     end
@@ -31,8 +31,9 @@ class CalendarController < ApplicationController
   def self.connect_groups_to_pairing_session(group, pairing_session)
     increment = 0
     while increment < group.size
-      UserPairingSession.create(user_id: group[increment].id, pairing_session_id: pairing_session.id)
+      pairing_session.user_pairing_sessions.create!(user_id: group[increment].id)
       increment += 1
     end
   end
 end
+
