@@ -8,16 +8,16 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <div class="topnav" id="myTopnav">
+    <!-- <div class="topnav" id="myTopnav">
     <% if !current_user %>
       <%= render "layouts/header" %>
     <% else %>
         <%= render "layouts/menu" %>
     <% end %>
-    </div>
+    </div> -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+
     <div class="main">
       <%= yield %>
 

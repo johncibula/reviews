@@ -26,11 +26,14 @@ export default class NewReview extends React.Component {
 
 
   listMembers(members) {
-
-    const choices = members.map(function(member){
-       <option value={member.id}>{member.nickname}</option>
-    })
-
+    const post = this.state
+    const choices = []
+    let i = 0
+    for (var key in members) {
+      choices[i] = <option value={members[key].id}>{members[key].nickname}</option>
+      console.log(members[key].id)
+      i += 1
+    }
     return (
       <select value={post.recipient_id} onChange={this.handleChange}>
         {choices}
@@ -40,11 +43,19 @@ export default class NewReview extends React.Component {
 
 
   render() {
-    console.log(this.props.members)
-    const members = this.listMembers(this.props.members)
+    // console.log('function')
+    // console.log(this.listMembers(this.props))
     return (
+
       <div className="post">
-            {this.listMembers(this.props)}
+        test
+        <form onSubmit={this.handleSubmit}>
+          <label>
+          Who are you reviewing?
+          {this.listMembers(this.props.members)}
+          </label>
+          <input type='submit' value="Submit" />
+        </form>
       </div>
     );
   }

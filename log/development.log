@@ -404,3 +404,375 @@ No template found for PostsController#destroy, rendering head :no_content
 Completed 204 No Content in 95ms (ActiveRecord: 1.9ms)
 
 
+Started GET "/posts/new" for ::1 at 2017-04-30 13:50:36 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"authenticity_token"=>"9MZjcArBIOKIX//N6+7HKNtgD/FCSGrp1Ou8INSHlKJ6wZYoW+Q7B1e/ic2WXaMS9go+89rEcuIh2tLRJXV2xQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (4.8ms)
+  Rendered posts/new.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 674ms (Views: 664.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 13:52:35 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"authenticity_token"=>"9MZjcArBIOKIX//N6+7HKNtgD/FCSGrp1Ou8INSHlKJ6wZYoW+Q7B1e/ic2WXaMS9go+89rEcuIh2tLRJXV2xQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.2ms)
+  Rendered posts/new.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 687ms (Views: 681.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 13:53:35 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"authenticity_token"=>"9MZjcArBIOKIX//N6+7HKNtgD/FCSGrp1Ou8INSHlKJ6wZYoW+Q7B1e/ic2WXaMS9go+89rEcuIh2tLRJXV2xQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (2.7ms)
+  Rendered posts/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  Rendered layouts/_side_bar.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 666ms (Views: 659.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 13:54:03 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"authenticity_token"=>"9MZjcArBIOKIX//N6+7HKNtgD/FCSGrp1Ou8INSHlKJ6wZYoW+Q7B1e/ic2WXaMS9go+89rEcuIh2tLRJXV2xQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (7.7ms)
+  Rendered posts/new.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_menu.html.erb (0.4ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 839ms (Views: 832.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 13:54:55 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (2.3ms)
+  Rendered posts/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  Rendered layouts/_side_bar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 45ms (Views: 40.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 13:55:38 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.3ms)
+  Rendered posts/new.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_menu.html.erb (0.4ms)
+  Rendered layouts/_side_bar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 671ms (Views: 665.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 13:56:03 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (4.0ms)
+  Rendered posts/new.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 698ms (Views: 692.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 13:56:46 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.9ms)
+  Rendered posts/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  Rendered layouts/_side_bar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 714ms (Views: 707.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 13:59:40 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (5.9ms)
+  Rendered posts/new.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 719ms (Views: 710.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:01:43 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (2.9ms)
+  Rendered posts/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 764ms (Views: 757.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:03:30 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (4.8ms)
+  Rendered posts/new.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 54.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:13:56 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.7ms)
+  Rendered posts/new.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 659ms (Views: 654.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:15:11 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (4.4ms)
+  Rendered posts/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 696ms (Views: 689.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:16:31 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.7ms)
+  Rendered posts/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 778ms (Views: 773.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:17:08 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (5.3ms)
+  Rendered posts/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 802ms (Views: 797.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:17:44 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (2.9ms)
+  Rendered posts/new.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 651ms (Views: 644.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:18:07 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.6ms)
+  Rendered posts/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 700ms (Views: 695.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:18:35 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.7ms)
+  Rendered posts/new.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 93ms (Views: 81.5ms | ActiveRecord: 6.6ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (26.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "provider", "uid", "name", "nickname", "repos_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test2@gmail.con"], ["provider", "github"], ["uid", "567893"], ["name", "John"], ["nickname", "test2"], ["repos_url", "https://api.github.com/users/johncibula/repos"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/posts/new" for ::1 at 2017-04-30 14:20:36 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (4.3ms)
+  Rendered posts/new.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 78ms (Views: 71.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:21:10 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.6ms)
+  Rendered posts/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_menu.html.erb (0.4ms)
+  Rendered layouts/_side_bar.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 702ms (Views: 694.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:21:28 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.5ms)
+  Rendered posts/new.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_menu.html.erb (0.4ms)
+  Rendered layouts/_side_bar.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 695ms (Views: 689.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:22:12 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (4.7ms)
+  Rendered posts/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 669ms (Views: 664.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:22:35 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.4ms)
+  Rendered posts/new.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_menu.html.erb (0.7ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 69ms (Views: 61.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:23:09 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (3.2ms)
+  Rendered posts/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 649ms (Views: 636.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:24:09 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (5.7ms)
+  Rendered posts/new.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 732ms (Views: 724.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 14:24:37 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (5.3ms)
+  Rendered posts/new.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  Rendered layouts/_side_bar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 791ms (Views: 784.0ms | ActiveRecord: 1.5ms)
+
+
