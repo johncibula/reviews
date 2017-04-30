@@ -16,6 +16,7 @@ export default class NewReview extends React.Component {
     this.handleWillingChange = this.handleWillingChange.bind(this);
     this.handleRatingChange = this.handleRatingChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleContentChange = this.handleContentChange.bind(this);
   }
 
   handleRecipientChange(event) {
@@ -30,11 +31,22 @@ export default class NewReview extends React.Component {
   handleRatingChange(event) {
       this.setState({rating: event.target.value});
     }
+  handleContentChange(event) {
+    this.setState({content: event.target.value});
+  }
 
   handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
+    console.log("STATE")
+    console.log(this.state)
+
+    $.ajax({
+      url: "/posts",
+            dataType: 'json',
+            type: 'POST',
+            data: {post: this.state}
+    });
+    c
+  }
 
 
   listMembers(members) {
@@ -79,10 +91,8 @@ export default class NewReview extends React.Component {
     )
   }
 
-
   render() {
-    // console.log('function')
-    // console.log(this.listMembers(this.props))
+    console.log(this.state)
     return (
 
       <div className="post">
@@ -106,6 +116,11 @@ export default class NewReview extends React.Component {
           <label>
             Overall, how would you rate working with them [0 - 5]?
             {this.listRatingChoices()}
+          </label>
+          <br />
+          <label>
+            What are they doing great, what could they do better?
+            <textarea value={this.state.content} onChange={this.handleContentChange} />
           </label>
           <br />
           <input type='submit' value="Submit" />
