@@ -62,3 +62,67 @@ No template found for PostsController#destroy, rendering head :no_content
 Completed 204 No Content in 136ms (ActiveRecord: 9.8ms)
 
 
+Started GET "/" for ::1 at 2017-04-30 11:59:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (341.3ms)
+  Rendered layouts/_menu.html.erb (1.8ms)
+  Rendered layouts/_side_bar.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1025ms (Views: 961.8ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-04-30 11:59:06 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1) ORDER BY "users"."nickname" ASC[0m
+  Rendered posts/_form.html.erb (30.2ms)
+  Rendered posts/new.html.erb within layouts/application (34.4ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 146ms (Views: 115.9ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/posts" for ::1 at 2017-04-30 11:59:16 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yCw8RqZYIYH+q5RRp+KvDxC0xeDrzc9XxURga7iHAB1GK8ke9306ZCFL4lHaUcs1Pd704nNB11wwdQ6aSXXieg==", "post"=>{"recipient_id"=>"2", "admin_message"=>"esfdsf", "willing_to_work"=>"Never", "rating"=>"3", "content"=>"dsfdsf"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "esfdsf"], ["content", "dsfdsf"], ["sender_id", "1"], ["recipient_id", "2"], ["rating", 3], ["willing_to_work", "Never"], ["created_at", 2017-04-30 16:59:16 UTC], ["updated_at", 2017-04-30 16:59:16 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 44ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-30 11:59:16 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  Rendered layouts/_side_bar.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 80ms (Views: 68.5ms | ActiveRecord: 5.3ms)
+
+
+Started DELETE "/posts/cba57ce6-a230-43eb-b6d0-b7d2e61924ce" for ::1 at 2017-04-30 11:59:17 -0500
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"cba57ce6-a230-43eb-b6d0-b7d2e61924ce"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "cba57ce6-a230-43eb-b6d0-b7d2e61924ce"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", "cba57ce6-a230-43eb-b6d0-b7d2e61924ce"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+No template found for PostsController#destroy, rendering head :no_content
+Completed 204 No Content in 137ms (ActiveRecord: 5.4ms)
+
+
