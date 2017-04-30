@@ -18,4 +18,5 @@ class ApplicationController < ActionController::Base
     #Use Model
     {}
   end
+
 end
