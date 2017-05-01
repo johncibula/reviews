@@ -7,7 +7,14 @@
     NO REVIEWS
   <% end %>
 </div>
+
 <div class="posts index">
+  <div id="new_post">
+
+</div>
   <h2> Reviews I have written </h2>
-    <%= react_component("PostList", props: @sent_posts_test, prerender: false)  %>
+    <h4>Add New Review</h4>
+    <%= link_to 'New', 'posts/new', remote: true %>
+    <br />
+    <%= react_component("PostList", props: {posts: @sent_posts_test, members: @users}, prerender: false) %>
 </div>

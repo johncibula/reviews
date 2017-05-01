@@ -1,21 +1,21 @@
 import React from 'react'
 import Post from '../../Post/components/post'
+import NewReview from '../../NewReview/components/newReview'
 
 export default class PostList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {posts: this.props}
+    this.state = {posts: this.props.posts,
+                  showComponent: false}
 
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.setState({showComponent: true});
   }
 
   removeItemClient(id) {
-
-    // var postToDelete = this.state[id]
-    // var postkeys = Object.keys(this.state)
-
-    // var wantedKeys = postkeys.filter((post) => { return post === id; });
-    // console.log('wantedKeys')
-    // console.log(wantedKeys)
     var newPosts = {}
 
     for (var key in this.state.posts) {
@@ -30,7 +30,6 @@ export default class PostList extends React.Component {
   }
 
   handleDelete(id) {
-
     $.ajax({
       url: `/posts/`+id,
       type: 'DELETE'
@@ -43,15 +42,33 @@ export default class PostList extends React.Component {
     const reviews = this.state.posts
     var handleDelete = this.handleDelete
     var removeClient = this.removeItemClient
+    var array = Object.keys(reviews)
+    console.log(reviews[array[0]])
 
     const posts = Object.keys(reviews).map(function(post) {
-       return <Post key={reviews[post].id} handleDelete={handleDelete} post={reviews[post]} removeClient={removeClient} that={that} />;
-      });
+      console.log(reviews[post])
+    return (
+      <Post key={reviews[post].id} handleDelete={handleDelete} post={reviews[post]} removeClient={removeClient} that={that} />
+      );
+
+    });
 
     return (
-        <div className="posts">
-            {posts}
+      <div>
+        <div>
+          <button onClick={this.handleClick}>
+            New Review
+          </button>
+          {this.state.showComponent ?
+            <NewReview members={this.props.members} /> :
+            null}
         </div>
-    );
-  }
+        <div>
+          {posts}
+        </div>
+      </div>
+      )
+    }
+
+
 }

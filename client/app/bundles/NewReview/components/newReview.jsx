@@ -1,4 +1,5 @@
 import React from 'react'
+
 export default class NewReview extends React.Component {
 
   constructor(props) {
@@ -18,6 +19,16 @@ export default class NewReview extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleContentChange = this.handleContentChange.bind(this);
   }
+  componentDidMount() {
+    window.addEventListener("load", function(event) {
+        console.log("All resources finished loading!");
+      });
+  }
+
+  // componentWillUnmount()  {
+  //   // clean up the handler when the component is removed:
+  //   $('#tab-2').off('shown.bs.tab', this._handleTabShow)
+  // }
 
   handleRecipientChange(event) {
       this.setState({recipient_id: event.target.value});
@@ -36,16 +47,15 @@ export default class NewReview extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log("STATE")
+    console.log("submitting")
     console.log(this.state)
-
     $.ajax({
       url: "/posts",
             dataType: 'json',
             type: 'POST',
             data: {post: this.state}
     });
-    c
+
   }
 
 
@@ -92,7 +102,6 @@ export default class NewReview extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
 
       <div className="post">

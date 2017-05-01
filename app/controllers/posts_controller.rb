@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   attr_accessor :sent_posts, :users
 
   def index
+    @post = Post.new
+    @users = User.all_except(current_user)
+    @users = instance_to_hash(users)
     if !current_user
       redirect_to('/sessions/new')
     else
@@ -23,13 +26,15 @@ class PostsController < ApplicationController
     @post = Post.new
     @users = User.all_except(current_user)
     @users = instance_to_hash(users)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
     @post = Post.new(post_params)
     @post.sender_id = current_user.id
     if @post.save
-      binding.pry
       flash[:notice] = "Successfully created post!"
       redirect_to '/'
     else
@@ -90,6 +95,10 @@ class PostsController < ApplicationController
       hash[instance.id] = instance
     end
     hash
+  end
+
+  def show_new_form
+
   end
 
 end
