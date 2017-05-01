@@ -5,8 +5,9 @@ export default class Calendar extends React.Component {
   generateDays(props){
     const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     let dayComponents = []
-    for (let i = 0; i < DAYS.length; i++) {             
-      dayComponents.push(<Day day={DAYS[i]} pair={props.name}></Day>);   
+    for (let day_indice = 0; day_indice < DAYS.length; day_indice++) {
+      const day = DAYS[day_indice] 
+      dayComponents.push(<Day day={day} pair={props[day]}></Day>);   
     }
     return dayComponents;
   }
@@ -43,9 +44,3 @@ var Day = React.createClass({
         );
     }
 });
-
-// <Day day="Monday" pair="Mike L"/>
-// <Day day="Tuesday" pair="Scott" />
-// <Day day="Wednesday" pair="Jin"/>
-// <Day day="Thursday" pair="Matt"/>
-// <Day day="Friday" pair="Brian"/>

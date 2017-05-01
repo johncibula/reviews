@@ -12,7 +12,6 @@ class CalendarController < ApplicationController
 
 
   def self.create_weekly_schedule ( group_size: 2, sessions: 5)
-    #return nil if !current_user.admin
     group_size = 2 if group_size.class != Integer || group_size < 2 
     sessions = 1 if  sessions.class != Integer || sessions < 1
     sessions = 5 if sessions > 5
