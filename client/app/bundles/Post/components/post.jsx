@@ -5,9 +5,7 @@ export default class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-                  // id: this.props.id,
-                  // rating: this.props.rating,
-                  // content: this.props.content,
+                  written_post: this.props.written_post,
                   showComponent: false
                 };
     this.handleClick = this.handleClick.bind(this);
@@ -35,12 +33,17 @@ export default class Post extends React.Component {
   render() {
     return (
       <div className="post">
-        <button onClick={this.showComponent}>Edit
-        </button>
+        {this.state.written_post ?
+          <button onClick={this.showComponent}>Edit
+          </button> : null}
+
+          {this.state.written_post ?
+          <button onClick={this.handleDelete.bind(this,this.props.post.id)}>
+            Delete
+          </button> : null}
+
         <a href={"/posts/" + this.props.post.id}>Show</a>
-        <button onClick={this.handleDelete.bind(this,this.props.post.id)}>
-          Delete
-        </button>
+
         <PostHeader post={this.props.post} />
         <PostContent post={this.props.post} />
         <div>

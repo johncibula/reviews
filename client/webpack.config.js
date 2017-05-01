@@ -16,7 +16,8 @@ const config = {
     './app/bundles/PostList/startup/registration',
     './app/bundles/Calendar/startup/registration',
     './app/bundles/NewReview/startup/registration',
-    './app/bundles/EditReview/startup/registration'
+    './app/bundles/EditReview/startup/registration',
+    './app/bundles/ReceivedPostList/startup/registration'
   ],
 
   output: {

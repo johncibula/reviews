@@ -53,7 +53,7 @@ export default class PostList extends React.Component {
     const posts = Object.keys(reviews).map(function(post) {
       console.log(reviews[post])
     return (
-      <Post key={reviews[post].id} handleDelete={handleDelete} post={reviews[post]} removeClient={removeClient} that={that} />
+      <Post key={reviews[post].id} handleDelete={handleDelete} post={reviews[post]} removeClient={removeClient} that={that} written_post={true} />
       );
 
     });
@@ -61,9 +61,10 @@ export default class PostList extends React.Component {
     return (
       <div>
         <div>
-          <button onClick={this.handleClick}>
-            New Review
-          </button>
+            <button onClick={this.handleClick}>
+              New Review
+            </button>
+
           {this.state.showComponent ?
             <NewReview members={this.props.members} unshowComponent={this.unshowComponent} /> :
             null}

@@ -2686,3 +2686,981 @@ No template found for PostsController#destroy, rendering head :no_content
 Completed 204 No Content in 176ms (ActiveRecord: 2.5ms)
 
 
+Started GET "/" for ::1 at 2017-05-01 16:30:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (58.9ms)
+Completed 500 Internal Server Error in 625ms (ActiveRecord: 12.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'webpack-bundle' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jr/Desktop/final_project/reviews/app/assets/config
+  /Users/jr/Desktop/final_project/reviews/app/assets/images
+  /Users/jr/Desktop/final_project/reviews/app/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/app/assets/stylesheets
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>Pearing Reviews</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/javascripts/application.js:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2311738036327145353_70295469409240'
+Started GET "/" for ::1 at 2017-05-01 16:30:14 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_menu.html.erb (0.9ms)
+  [1m[36mPairingSession Load (0.4ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (98.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 1410ms (Views: 1392.5ms | ActiveRecord: 8.7ms)
+
+
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/posts" for ::1 at 2017-05-01 16:31:21 -0500
+Started GET "/" for ::1 at 2017-05-01 16:31:21 -0500
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"admin_message"=>"f", "recipient_id"=>"test", "content"=>"f", "willing_to_work"=>"f", "rating"=>"0"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "1"], ["recipient_id", "test"], ["rating", 0], ["willing_to_work", "f"], ["created_at", 2017-05-01 21:31:22 UTC], ["updated_at", 2017-05-01 21:31:22 UTC]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 137ms (ActiveRecord: 16.8ms)
+
+
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_menu.html.erb (0.4ms)
+  [1m[36mPairingSession Load (1.4ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (5.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 90ms (Views: 77.4ms | ActiveRecord: 4.5ms)
+
+
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "2"], ["recipient_id", "User.where(:nickname => johncibula).first"], ["rating", 0], ["willing_to_work", "Never"], ["created_at", 2017-05-01 21:36:29 UTC], ["updated_at", 2017-05-01 21:36:29 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-05-01 16:36:40 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.6ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 698ms (Views: 682.4ms | ActiveRecord: 7.9ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "2"], ["recipient_id", "1"], ["rating", 0], ["willing_to_work", "Never"], ["created_at", 2017-05-01 21:38:52 UTC], ["updated_at", 2017-05-01 21:38:52 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "2"], ["recipient_id", "1"], ["rating", 0], ["willing_to_work", "Never"], ["created_at", 2017-05-01 21:39:30 UTC], ["updated_at", 2017-05-01 21:39:30 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+Started GET "/" for ::1 at 2017-05-01 16:40:10 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  [1m[36mPairingSession Load (0.5ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 116ms (Views: 105.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:40:13 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.4ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 94ms (Views: 80.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:40:15 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.4ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 74ms (Views: 62.8ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/posts/e8c4ba6e-4196-4821-88b8-6907e39caab3" for ::1 at 2017-05-01 16:40:17 -0500
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"e8c4ba6e-4196-4821-88b8-6907e39caab3"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "e8c4ba6e-4196-4821-88b8-6907e39caab3"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", "e8c4ba6e-4196-4821-88b8-6907e39caab3"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+No template found for PostsController#destroy, rendering head :no_content
+Completed 204 No Content in 110ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:41:19 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+Started GET "/" for ::1 at 2017-05-01 16:42:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (11.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (85.9ms)
+Started GET "/" for ::1 at 2017-05-01 16:42:18 -0500
+Completed 500 Internal Server Error in 1389ms (ActiveRecord: 26.1ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'webpack-bundle' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jr/Desktop/final_project/reviews/app/assets/config
+  /Users/jr/Desktop/final_project/reviews/app/assets/images
+  /Users/jr/Desktop/final_project/reviews/app/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/app/assets/stylesheets
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>Pearing Reviews</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/javascripts/application.js:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___264482567452791415_70324150017920'
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 6.7ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'webpack-bundle' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jr/Desktop/final_project/reviews/app/assets/config
+  /Users/jr/Desktop/final_project/reviews/app/assets/images
+  /Users/jr/Desktop/final_project/reviews/app/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/app/assets/stylesheets
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>Pearing Reviews</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/javascripts/application.js:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___264482567452791415_70324150017920'
+Started GET "/" for ::1 at 2017-05-01 16:42:24 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 6.8ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'webpack-bundle' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jr/Desktop/final_project/reviews/app/assets/config
+  /Users/jr/Desktop/final_project/reviews/app/assets/images
+  /Users/jr/Desktop/final_project/reviews/app/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/app/assets/stylesheets
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>Pearing Reviews</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/javascripts/application.js:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___264482567452791415_70324150017920'
+Started GET "/" for ::1 at 2017-05-01 16:42:27 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 15.3ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'webpack-bundle' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jr/Desktop/final_project/reviews/app/assets/config
+  /Users/jr/Desktop/final_project/reviews/app/assets/images
+  /Users/jr/Desktop/final_project/reviews/app/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/app/assets/stylesheets
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>Pearing Reviews</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/javascripts/application.js:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___264482567452791415_70324150017920'
+Started GET "/" for ::1 at 2017-05-01 16:42:32 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mPairingSession Load (0.4ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (81.6ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 806ms (Views: 789.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:43:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1 ORDER BY "posts"."id" ASC LIMIT $2[0m  [["recipient_id", "1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "2"], ["recipient_id", "1"], ["rating", 0], ["willing_to_work", "Never"], ["created_at", 2017-05-01 21:46:49 UTC], ["updated_at", 2017-05-01 21:46:49 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "2"], ["recipient_id", "1"], ["rating", 0], ["willing_to_work", "Never"], ["created_at", 2017-05-01 21:46:51 UTC], ["updated_at", 2017-05-01 21:46:51 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "2"], ["recipient_id", "1"], ["rating", 0], ["willing_to_work", "Never"], ["created_at", 2017-05-01 21:46:52 UTC], ["updated_at", 2017-05-01 21:46:52 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-05-01 16:46:55 -0500
+Started GET "/" for ::1 at 2017-05-01 16:47:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (96.2ms)
+Completed 500 Internal Server Error in 990ms (ActiveRecord: 27.5ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'webpack-bundle' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jr/Desktop/final_project/reviews/app/assets/config
+  /Users/jr/Desktop/final_project/reviews/app/assets/images
+  /Users/jr/Desktop/final_project/reviews/app/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/app/assets/stylesheets
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>Pearing Reviews</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/javascripts/application.js:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3792646088327751119_70241579561720'
+Started GET "/" for ::1 at 2017-05-01 16:47:31 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (12.5ms)
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 10.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'webpack-bundle' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jr/Desktop/final_project/reviews/app/assets/config
+  /Users/jr/Desktop/final_project/reviews/app/assets/images
+  /Users/jr/Desktop/final_project/reviews/app/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/app/assets/stylesheets
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>Pearing Reviews</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/javascripts/application.js:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3792646088327751119_70241579561720'
+Started GET "/" for ::1 at 2017-05-01 16:47:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 10.7ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'webpack-bundle' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jr/Desktop/final_project/reviews/app/assets/config
+  /Users/jr/Desktop/final_project/reviews/app/assets/images
+  /Users/jr/Desktop/final_project/reviews/app/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/app/assets/stylesheets
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/javascripts
+  /Users/jr/Desktop/final_project/reviews/vendor/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.2.2/vendor/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/jr/Desktop/final_project/reviews/app/assets/webpack
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jr/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>Pearing Reviews</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/javascripts/application.js:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3792646088327751119_70241579561720'
+Started GET "/" for ::1 at 2017-05-01 16:47:37 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_menu.html.erb (1.7ms)
+  [1m[36mPairingSession Load (0.6ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (78.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 448ms (Views: 427.5ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:54:40 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_menu.html.erb (0.6ms)
+  [1m[36mPairingSession Load (0.5ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (5.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 875ms (Views: 860.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:54:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.4ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 77ms (Views: 67.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:54:58 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_menu.html.erb (0.4ms)
+  [1m[36mPairingSession Load (0.4ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 716ms (Views: 694.5ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:55:22 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (7.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_menu.html.erb (0.5ms)
+  [1m[36mPairingSession Load (0.5ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 118ms (Views: 81.0ms | ActiveRecord: 28.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:55:25 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (11.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_menu.html.erb (0.5ms)
+  [1m[36mPairingSession Load (0.3ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 779ms (Views: 743.4ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:56:36 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.2ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 881ms (Views: 861.5ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:56:39 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_menu.html.erb (0.4ms)
+  [1m[36mPairingSession Load (0.5ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (5.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 102ms (Views: 83.6ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:57:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  [1m[36mPairingSession Load (0.2ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 720ms (Views: 707.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:59:32 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (3.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.2ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 721ms (Views: 700.2ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/posts/d54f7a58-d940-472e-80fe-e4fe39b3edfb" for ::1 at 2017-05-01 16:59:36 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"d54f7a58-d940-472e-80fe-e4fe39b3edfb"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "d54f7a58-d940-472e-80fe-e4fe39b3edfb"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.3ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 85ms (Views: 73.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 16:59:48 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.2ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 81ms (Views: 69.5ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/posts" for ::1 at 2017-05-01 16:59:53 -0500
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"admin_message"=>"f", "recipient_id"=>{"id"=>"2", "email"=>"test@gmail.com", "provider"=>"github", "uid"=>"223725554", "name"=>"John", "nickname"=>"test", "repos_url"=>"", "admin"=>"", "profile_approved"=>""}, "content"=>"f", "willing_to_work"=>"f", "rating"=>"0"}}
+Unpermitted parameter: recipient_id
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for ::1 at 2017-05-01 16:59:53 -0500
+  [1m[35mSQL (10.1ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "1"], ["rating", 0], ["willing_to_work", "f"], ["created_at", 2017-05-01 21:59:53 UTC], ["updated_at", 2017-05-01 21:59:53 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 12.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "recipient_id" violates not-null constraint
+DETAIL:  Failing row contains (0e3e6bae-5dd1-4a3f-a63d-43052aafe72d, f, f, 1, null, 0, f, 2017-05-01 21:59:53.97533, 2017-05-01 21:59:53.97533).
+: INSERT INTO "posts" ("admin_message", "content", "sender_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"):
+  
+app/controllers/posts_controller.rb:34:in `create'
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_menu.html.erb (0.6ms)
+  [1m[36mPairingSession Load (0.7ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 141ms (Views: 114.1ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 17:00:46 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_menu.html.erb (0.6ms)
+  [1m[36mPairingSession Load (0.3ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 115ms (Views: 97.4ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 17:00:50 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.4ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 889ms (Views: 865.8ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/posts" for ::1 at 2017-05-01 17:00:55 -0500
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"admin_message"=>"f", "recipient_id"=>"2", "content"=>"f", "willing_to_work"=>"f", "rating"=>"0"}}
+Started GET "/" for ::1 at 2017-05-01 17:00:55 -0500
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by PostsController#index as HTML
+  [1m[35mSQL (12.9ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "1"], ["recipient_id", "2"], ["rating", 0], ["willing_to_work", "f"], ["created_at", 2017-05-01 22:00:55 UTC], ["updated_at", 2017-05-01 22:00:55 UTC]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (87.3ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (90.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 361ms (Views: 255.7ms | ActiveRecord: 93.8ms)
+
+
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 393ms (ActiveRecord: 38.1ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 17:01:08 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[36mPairingSession Load (0.2ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 82ms (Views: 71.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/posts" for ::1 at 2017-05-01 17:01:21 -0500
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"admin_message"=>"f", "recipient_id"=>"2", "content"=>"f", "willing_to_work"=>"f", "rating"=>"2"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "1"], ["recipient_id", "2"], ["rating", 2], ["willing_to_work", "f"], ["created_at", 2017-05-01 22:01:21 UTC], ["updated_at", 2017-05-01 22:01:21 UTC]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-05-01 17:01:21 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (124.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No template found for PostsController#create, rendering head :no_content
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+Completed 204 No Content in 332ms (ActiveRecord: 6.2ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_menu.html.erb (0.5ms)
+  [1m[36mPairingSession Load (0.2ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 257ms (Views: 120.7ms | ActiveRecord: 128.3ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 17:04:31 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (12.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (3.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_menu.html.erb (0.7ms)
+  [1m[36mPairingSession Load (0.4ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 150ms (Views: 119.3ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 17:04:36 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  [1m[36mPairingSession Load (0.3ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1013ms (Views: 1003.3ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/posts/2819c73d-449a-46e7-8653-ff0dd5d2e83d" for ::1 at 2017-05-01 17:04:46 -0500
+Started GET "/" for ::1 at 2017-05-01 17:04:46 -0500
+Processing by PostsController#update as JSON
+  Parameters: {"post"=>{"admin_message"=>"f", "recipient_id"=>"2", "content"=>"f", "willing_to_work"=>"f", "rating"=>"0"}, "id"=>"2819c73d-449a-46e7-8653-ff0dd5d2e83d"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "2819c73d-449a-46e7-8653-ff0dd5d2e83d"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/2819c73d-449a-46e7-8653-ff0dd5d2e83d
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started PATCH "/posts/2819c73d-449a-46e7-8653-ff0dd5d2e83d" for ::1 at 2017-05-01 17:04:46 -0500
+Processing by PostsController#update as JSON
+Processing by PostsController#index as HTML
+  Parameters: {"post"=>{"admin_message"=>"f", "recipient_id"=>"2", "content"=>"f", "willing_to_work"=>"f", "rating"=>"0"}, "id"=>"2819c73d-449a-46e7-8653-ff0dd5d2e83d"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (6.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "2819c73d-449a-46e7-8653-ff0dd5d2e83d"], ["LIMIT", 1]]
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering posts/index.html.erb within layouts/application
+Redirected to http://localhost:3000/posts/2819c73d-449a-46e7-8653-ff0dd5d2e83d
+Completed 302 Found in 35ms (ActiveRecord: 12.5ms)
+
+
+  Rendered posts/index.html.erb within layouts/application (8.2ms)
+Started PATCH "/posts/2819c73d-449a-46e7-8653-ff0dd5d2e83d" for ::1 at 2017-05-01 17:04:46 -0500
+Processing by PostsController#update as JSON
+  Parameters: {"post"=>{"admin_message"=>"f", "recipient_id"=>"2", "content"=>"f", "willing_to_work"=>"f", "rating"=>"0"}, "id"=>"2819c73d-449a-46e7-8653-ff0dd5d2e83d"}
+  [1m[36mPost Load (4.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "2819c73d-449a-46e7-8653-ff0dd5d2e83d"], ["LIMIT", 1]]
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  Rendered layouts/_menu.html.erb (0.3ms)
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/2819c73d-449a-46e7-8653-ff0dd5d2e83d
+Completed 302 Found in 17ms (ActiveRecord: 8.6ms)
+
+
+  [1m[36mPairingSession Load (1.9ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 113ms (Views: 94.8ms | ActiveRecord: 9.3ms)
+
+
+Started PATCH "/posts/2819c73d-449a-46e7-8653-ff0dd5d2e83d" for ::1 at 2017-05-01 17:04:46 -0500
+Processing by PostsController#update as JSON
+  Parameters: {"post"=>{"admin_message"=>"f", "recipient_id"=>"2", "content"=>"f", "willing_to_work"=>"f", "rating"=>"0"}, "id"=>"2819c73d-449a-46e7-8653-ff0dd5d2e83d"}
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "2819c73d-449a-46e7-8653-ff0dd5d2e83d"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/2819c73d-449a-46e7-8653-ff0dd5d2e83d
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started DELETE "/posts/2819c73d-449a-46e7-8653-ff0dd5d2e83d" for ::1 at 2017-05-01 17:04:50 -0500
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"2819c73d-449a-46e7-8653-ff0dd5d2e83d"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "2819c73d-449a-46e7-8653-ff0dd5d2e83d"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", "2819c73d-449a-46e7-8653-ff0dd5d2e83d"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for PostsController#destroy, rendering head :no_content
+Completed 204 No Content in 226ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/posts/fc1d03a0-dc97-40d5-925f-f18fd1e6cc58" for ::1 at 2017-05-01 17:04:51 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"fc1d03a0-dc97-40d5-925f-f18fd1e6cc58"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "fc1d03a0-dc97-40d5-925f-f18fd1e6cc58"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.2ms)
+  [1m[36mPairingSession Load (0.2ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 73.8ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/fc1d03a0-dc97-40d5-925f-f18fd1e6cc58" for ::1 at 2017-05-01 17:05:04 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"t5woioBuCdUsNBnwmtWYxbp8oA1T0ZpGoK/V93Gb4ufgQp6TCxe0ZPnWo+i4BJXnwsw7nggFss3LTeYzIo8WpQ==", "id"=>"fc1d03a0-dc97-40d5-925f-f18fd1e6cc58"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", "fc1d03a0-dc97-40d5-925f-f18fd1e6cc58"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", "fc1d03a0-dc97-40d5-925f-f18fd1e6cc58"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for PostsController#destroy, rendering head :no_content
+Completed 204 No Content in 163ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 17:13:28 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_menu.html.erb (0.2ms)
+  [1m[36mPairingSession Load (0.2ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 55ms (Views: 47.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/posts" for ::1 at 2017-05-01 17:13:39 -0500
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"admin_message"=>"f", "recipient_id"=>"2", "content"=>"f", "willing_to_work"=>"f", "rating"=>"0"}}
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for ::1 at 2017-05-01 17:13:39 -0500
+  [1m[35mSQL (15.8ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "f"], ["content", "f"], ["sender_id", "1"], ["recipient_id", "2"], ["rating", 0], ["willing_to_work", "f"], ["created_at", 2017-05-01 22:13:39 UTC], ["updated_at", 2017-05-01 22:13:39 UTC]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+Processing by PostsController#index as HTML
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 158ms (ActiveRecord: 37.7ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_menu.html.erb (0.4ms)
+  [1m[36mPairingSession Load (0.3ms)[0m  [1m[34mSELECT "pairing_sessions".* FROM "pairing_sessions" INNER JOIN "user_pairing_sessions" ON "pairing_sessions"."id" = "user_pairing_sessions"."pairing_session_id" WHERE "user_pairing_sessions"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered layouts/_side_bar.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 88ms (Views: 75.8ms | ActiveRecord: 2.9ms)
+
+

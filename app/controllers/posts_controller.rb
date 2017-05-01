@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  attr_accessor :sent_posts, :users
+  attr_accessor :sent_posts, :users, :received_posts
 
   def index
     @post = Post.new
@@ -9,7 +9,7 @@ class PostsController < ApplicationController
       redirect_to('/sessions/new')
     else
       @received_posts = Post.received_posts(current_user)
-      # @received_posts = @received_posts.serialize_hash
+      @received_posts = instance_to_hash(received_posts)
       check_post_count
       @sent_posts = Post.sent_posts(current_user)
       @sent_posts_test = instance_to_hash(sent_posts)
@@ -87,14 +87,14 @@ class PostsController < ApplicationController
 
   def instance_to_hash(instance_variable)
     hash = {}
-    instance_variable.each do |instance|
-      hash[instance.id] = instance
+    if !instance_variable
+      return hash
+    else
+      instance_variable.each do |instance|
+        hash[instance.id] = instance
+      end
     end
     hash
-  end
-
-  def show_new_form
-
   end
 
 end

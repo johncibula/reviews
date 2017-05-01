@@ -6,7 +6,7 @@ export default class NewReview extends React.Component {
     super(props);
     this.state = {
                   admin_message: 'f',
-                  recipient_id: "test",
+                  recipient_id: this.props.members[Object.keys(this.props.members)[0]].id,
                   content: 'f',
                   willing_to_work: 'f',
                   rating: "0",
