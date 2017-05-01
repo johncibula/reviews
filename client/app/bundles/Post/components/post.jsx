@@ -1,33 +1,53 @@
-import React from 'react'
+import React from 'react';
+import EditReview from '../../EditReview/components/editReview'
 export default class Post extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //                 id: this.props.id,
-  //                 rating: this.props.rating,
-  //                 content: this.props.content
-  //               };
-
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+                  // id: this.props.id,
+                  // rating: this.props.rating,
+                  // content: this.props.content,
+                  showComponent: false
+                };
+    this.handleClick = this.handleClick.bind(this);
+    this.unshowComponent = this.unshowComponent.bind(this);
+    this.showComponent = this.showComponent.bind(this);
+  }
 
   handleDelete(id) {
     this.props.handleDelete(id)
     this.props.that.removeItemClient(id)
   }
 
+  handleClick(id) {
+
+  }
+
+  showComponent(event) {
+    this.setState({showComponent: true})
+  }
+
+  unshowComponent(event) {
+    this.setState({showComponent: false})
+  }
+
   render() {
-    console.log("THIS IS THE POST")
     return (
       <div className="post">
-        <a href={"/posts/" + this.props.post.id + "/edit"}>Edit</a>
-        <br />
+        <button onClick={this.showComponent}>Edit
+        </button>
         <a href={"/posts/" + this.props.post.id}>Show</a>
         <button onClick={this.handleDelete.bind(this,this.props.post.id)}>
           Delete
         </button>
         <PostHeader post={this.props.post} />
         <PostContent post={this.props.post} />
+        <div>
+          {this.state.showComponent ?
+            <EditReview post={this.props.post} unshowComponent={this.unshowComponent} handleClick={this.handleClick} /> :
+            null}
+        </div>
       </div>
     );
   }

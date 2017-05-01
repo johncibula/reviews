@@ -72,8 +72,6 @@ export default class PostList extends React.Component {
           {posts}
         </div>
       </div>
-      )
-    }
-
-
+    )
+  }
 }

@@ -5,11 +5,11 @@ export default class NewReview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-                  admin_message: 'f',
-                  recipient_id: "test",
-                  content: 'f',
-                  willing_to_work: 'f',
-                  rating: "0",
+                  admin_message: this.props.post.admin_message,
+                  recipient_id: this.props.post.recipient_id,
+                  content: this.props.post.content,
+                  willing_to_work: this.props.post.willing_to_work,
+                  rating: this.props.post.rating,
                   };
 
     this.handleAdminChange = this.handleAdminChange.bind(this);
@@ -44,9 +44,9 @@ export default class NewReview extends React.Component {
   handleSubmit(event) {
     console.log(this.state)
     $.ajax({
-      url: "/posts",
+      url: `/posts/` + this.props.post.id,
             dataType: 'json',
-            type: 'POST',
+            type: 'PATCH',
             data: {post: this.state}
     });
     unshowComponent()
@@ -96,16 +96,14 @@ export default class NewReview extends React.Component {
   }
 
   render() {
+    console.log('props')
+    console.log(this.props.post)
+    console.log('state')
     console.log(this.state)
     return (
 
       <div className="post">
-        test
         <form onSubmit={this.handleSubmit}>
-          <label>
-          Who are you reviewing?
-          {this.listMembers(this.props.members)}
-          </label>
           <br />
           <label>
             What should the cadre know to help them improve?
