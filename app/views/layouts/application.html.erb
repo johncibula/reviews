@@ -17,12 +17,14 @@
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
+    
     <div class="main">
       <%= yield %>
 
     </div>
-    <%= render "layouts/side_bar" %>
+    <% if current_user %>
+          <%= render "layouts/side_bar" %>
+    <% end %>
     <%= render "layouts/footer" %>
   </body>
 </html>

@@ -1,7 +1,17 @@
 class CalendarController < ApplicationController
 
+
+  def self.pairing_schedule (user = current_user)
+    user_sessions = user.pairing_sessions
+    schedule = {}
+    user_sessions.each do | session |
+      schedule[session.day] = CalendarController.get_users(session, user)
+    end
+    schedule
+  end
+
+
   def self.create_weekly_schedule ( group_size: 2, sessions: 5)
-    #return nil if !current_user.admin
     group_size = 2 if group_size.class != Integer || group_size < 2 
     sessions = 1 if  sessions.class != Integer || sessions < 1
     sessions = 5 if sessions > 5
@@ -17,6 +27,15 @@ class CalendarController < ApplicationController
   end
 
   private 
+
+  def self.get_users (session, user = current_user)
+    users = session.users.select { | person | person.id  != user.id }
+    names = ""
+    users.each do | user |
+      names = names + user.name + " " 
+    end
+    names
+  end
 
   def self.create_day_schedule(groups, weekday_indice)
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
