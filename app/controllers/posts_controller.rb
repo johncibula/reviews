@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   attr_accessor :sent_posts, :users
 
   def index
+    @post = Post.new
+    @users = User.all_except(current_user)
+    @users = instance_to_hash(users)
     if !current_user
       redirect_to('/sessions/new')
     else
@@ -89,6 +92,10 @@ class PostsController < ApplicationController
       hash[instance.id] = instance
     end
     hash
+  end
+
+  def show_new_form
+
   end
 
 end

@@ -1,19 +1,30 @@
 import React from 'react'
+
 export default class NewReview extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
                   admin_message: '',
-                  recipient_id: 0,
+                  recipient_id: this.props.members[Object.keys(this.props.members)[0]].id,
                   content: '',
                   willing_to_work: '',
-                  rating: 0,
+                  rating: "0",
                   };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  componentDidMount() {
+    window.addEventListener("load", function(event) {
+        console.log("All resources finished loading!");
+      });
+  }
+
+  // componentWillUnmount()  {
+  //   // clean up the handler when the component is removed:
+  //   $('#tab-2').off('shown.bs.tab', this._handleTabShow)
+  // }
 
   handleChange(event) {
       this.setState({rating: event.target.value});
@@ -23,7 +34,16 @@ export default class NewReview extends React.Component {
       alert('A name was submitted: ' + this.state.value);
       event.preventDefault();
     }
+    console.log("submitting")
+    console.log(this.state)
+    $.ajax({
+      url: "/posts",
+            dataType: 'json',
+            type: 'POST',
+            data: {post: this.state}
+    });
 
+  }
 
   listMembers(members) {
 
