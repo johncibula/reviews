@@ -30,6 +30,7 @@ export default class Post extends React.Component {
 
   unshowComponent(event) {
     this.setState({showComponent: false})
+    unshow()
   }
 
   render() {
