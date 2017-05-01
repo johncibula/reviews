@@ -26,9 +26,6 @@ class PostsController < ApplicationController
     @post = Post.new
     @users = User.all_except(current_user)
     @users = instance_to_hash(users)
-    respond_to do |format|
-      format.js
-    end
   end
 
   def create

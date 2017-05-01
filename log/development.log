@@ -6793,3 +6793,50 @@ No template found for PostsController#destroy, rendering head :no_content
 Completed 204 No Content in 107ms (ActiveRecord: 5.0ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "provider", "uid", "nickname") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@gmail.com"], ["provider", "github"], ["uid", "333333"], ["nickname", "test"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-05-01 01:00:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (518.1ms)
+  Rendered layouts/_menu.html.erb (1.2ms)
+  Rendered layouts/_side_bar.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 1674ms (Views: 1579.1ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/" for ::1 at 2017-05-01 01:00:54 -0500
+Started POST "/posts" for ::1 at 2017-05-01 01:00:54 -0500
+Processing by PostsController#index as HTML
+Processing by PostsController#create as JSON
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"post"=>{"admin_message"=>"d", "recipient_id"=>"2", "content"=>"d", "willing_to_work"=>"Possibly", "rating"=>"1"}}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != 1)[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."recipient_id" = $1[0m  [["recipient_id", "1"]]
+  [1m[35m (5.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."sender_id" = $1[0m  [["sender_id", "1"]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_menu.html.erb (0.3ms)
+  Rendered layouts/_side_bar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 131ms (Views: 105.7ms | ActiveRecord: 14.9ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (9.3ms)[0m  [1m[32mINSERT INTO "posts" ("admin_message", "content", "sender_id", "recipient_id", "rating", "willing_to_work", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["admin_message", "d"], ["content", "d"], ["sender_id", "1"], ["recipient_id", "2"], ["rating", 1], ["willing_to_work", "Possibly"], ["created_at", 2017-05-01 06:00:55 UTC], ["updated_at", 2017-05-01 06:00:55 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 181ms (ActiveRecord: 31.4ms)
+
+

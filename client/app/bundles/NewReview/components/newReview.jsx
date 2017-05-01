@@ -6,10 +6,10 @@ export default class NewReview extends React.Component {
     super(props);
     this.state = {
                   admin_message: '',
-                  recipient_id: 0,
+                  recipient_id: this.props.members[Object.keys(this.props.members)[0]].id,
                   content: '',
                   willing_to_work: '',
-                  rating: 0,
+                  rating: "0",
                   };
 
     this.handleAdminChange = this.handleAdminChange.bind(this);
@@ -102,6 +102,7 @@ export default class NewReview extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return (
 
       <div className="post">
