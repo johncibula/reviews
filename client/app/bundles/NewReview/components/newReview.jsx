@@ -47,8 +47,9 @@ export default class NewReview extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log("submitting")
-    console.log(this.state)
+      alert('A name was submitted: ' + this.state.value);
+      event.preventDefault();
+    }
     $.ajax({
       url: "/posts",
             dataType: 'json',
@@ -57,7 +58,6 @@ export default class NewReview extends React.Component {
     });
 
   }
-
 
   listMembers(members) {
     const post = this.state
