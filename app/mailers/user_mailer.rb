@@ -12,4 +12,10 @@ class UserMailer < ApplicationMailer
     @url = 'localhost:3000/sessions/new' 
     mail(to: @user.email, subject: 'Leave a review for your coding partner!')
   end
+
+  # def weekly_email(user)
+  #   @user = user
+  #   @url = 'localhost:3000/sessions/new' 
+  #   mail(to: @user.email, subject: 'Here are your Pairning Reviews')
+  # end
 end

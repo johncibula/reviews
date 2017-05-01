@@ -1,3 +1,4 @@
+require_relative "./../jobs/send_5pm_email_job"
 class User < ActiveRecord::Base
   has_many :sent_posts, class_name: 'Post', foreign_key: :sender_id
   has_many :received_posts, class_name: 'Post', foreign_key: :recipient_id
@@ -18,6 +19,7 @@ class User < ActiveRecord::Base
       end
       User.send_confirmation_email(my_user) 
       User.send_5pm_email(my_user)
+      #User.send_weekly_email(my_user)
   end
 
   def self.send_confirmation_email(user)
@@ -31,8 +33,12 @@ class User < ActiveRecord::Base
     Send5pmEmailJob.set(cron: '0 17 * * 1,2,3,4,5').perform_later(@user) 
   end
 
+  # def self.send_weekly_email(user)  #Method to send 7am Saturday email delayed job cron
+  #   SendWeeklyEmailJob.set(cron: '0 7 * * 6').perform_later(@user) 
+  # end
 
   def self.all_except(user)
     where.not(id: user)
   end
+
 end

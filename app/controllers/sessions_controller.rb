@@ -1,3 +1,5 @@
+require 'pry'
+
 # sessions_controller.rb
 class SessionsController < ApplicationController
   def create
