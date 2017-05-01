@@ -9,10 +9,15 @@ export default class PostList extends React.Component {
                   showComponent: false}
 
     this.handleClick = this.handleClick.bind(this);
+    this.unshowComponent = this.unshowComponent.bind(this);
   }
 
   handleClick(event) {
     this.setState({showComponent: true});
+  }
+
+  unshowComponent(event) {
+    this.setState({showComponent: false})
   }
 
   removeItemClient(id) {
@@ -60,7 +65,7 @@ export default class PostList extends React.Component {
             New Review
           </button>
           {this.state.showComponent ?
-            <NewReview members={this.props.members} /> :
+            <NewReview members={this.props.members} unshowComponent={this.unshowComponent} /> :
             null}
         </div>
         <div>

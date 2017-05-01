@@ -54,7 +54,7 @@ export default class NewReview extends React.Component {
             type: 'POST',
             data: {post: this.state}
     });
-
+    unshowComponent()
      event.preventDefault();
   }
 

@@ -32,8 +32,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.sender_id = current_user.id
     if @post.save
-      flash[:notice] = "Successfully created post!"
-      redirect_to '/'
+      flash[:notice] = "Successfully created post"
     else
       flash[:alert] = "Error creating new post!"
       render 'new'
