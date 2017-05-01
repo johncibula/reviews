@@ -5,10 +5,10 @@ export default class NewReview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-                  admin_message: '',
-                  recipient_id: "0",
-                  content: '',
-                  willing_to_work: '',
+                  admin_message: 'f',
+                  recipient_id: "test",
+                  content: 'f',
+                  willing_to_work: 'f',
                   rating: "0",
                   };
 
@@ -47,9 +47,7 @@ export default class NewReview extends React.Component {
   }
 
   handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
+    console.log(this.state)
     $.ajax({
       url: "/posts",
             dataType: 'json',
@@ -57,6 +55,7 @@ export default class NewReview extends React.Component {
             data: {post: this.state}
     });
 
+     event.preventDefault();
   }
 
   listMembers(members) {
