@@ -58,7 +58,15 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
+    daemons (1.2.4)
     debug_inspector (0.0.2)
+    delayed_cron_job (0.7.1)
+      delayed_job (>= 4.1)
+    delayed_job (4.1.2)
+      activesupport (>= 3.0, < 5.1)
+    delayed_job_active_record (4.1.1)
+      activerecord (>= 3.0, < 5.1)
+      delayed_job (>= 3.0, < 5)
     dotenv (2.2.0)
     dotenv-rails (2.2.0)
       dotenv (= 2.2.0)
@@ -207,6 +215,9 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.2)
+  daemons
+  delayed_cron_job
+  delayed_job_active_record
   dotenv-rails
   foreman
   jbuilder (~> 2.5)

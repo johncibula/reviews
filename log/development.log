@@ -2544,3 +2544,507 @@ Redirected to http://localhost:3000/
 Completed 302 Found in 20425ms (ActiveRecord: 20.8ms)
 
 
+Started GET "/" for ::1 at 2017-04-30 17:39:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (8.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 30ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-04-30 17:39:44 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_side_bar.html.erb (581.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 5461ms (Views: 5453.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(206482738602696885);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (18.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(206482738602696885)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(206482738602696885);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(206482738602696885)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-30 18:30:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-04-30 18:30:52 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_side_bar.html.erb (100.1ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 1008ms (Views: 1001.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for ::1 at 2017-04-30 18:30:56 -0500
+Started GET "/auth/github/callback?code=1e2911fb5a4569511d0d&state=871345cdf22c2b7baacdc99515ea9939d65f9462ca03c511" for ::1 at 2017-04-30 18:31:25 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"1e2911fb5a4569511d0d", "state"=>"871345cdf22c2b7baacdc99515ea9939d65f9462ca03c511", "provider"=>"github"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "github"], ["uid", "24721051"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "provider", "uid", "name", "nickname", "repos_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "CAROLINEWYNSPEARE@GMAIL.COM"], ["provider", "github"], ["uid", "24721051"], ["name", "Caroline Wynspeare Cessaro"], ["nickname", "wynspeare"], ["repos_url", "https://api.github.com/users/wynspeare/repos"]]
+  [1m[35m (146.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/welcome_email.text.erb
+  Rendered user_mailer/welcome_email.text.erb (0.3ms)
+UserMailer#welcome_email: processed outbound mail in 346.3ms
+Sent mail to CAROLINEWYNSPEARE@GMAIL.COM (34.3ms)
+Date: Sun, 30 Apr 2017 18:31:27 -0500
+From: ppearing@gmail.com
+To: CAROLINEWYNSPEARE@GMAIL.COM
+Message-ID: <590673cf55992_154c03fec01685d6c4689a@MICHAELs-MacBook-Air-2.local.mail>
+Subject: Welcome to Pearing!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_590673cf50290_154c03fec01685d6c4678d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_590673cf50290_154c03fec01685d6c4678d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to Pearing Caroline Wynspeare Cessaro
+===============================================
+ 
+You have successfully signed up!
+      
+Welcome to the world's finest Code Pairing family.
+ 
+Thanks for joining and have a great day!
+----==_mimepart_590673cf50290_154c03fec01685d6c4678d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Pearing Caroline Wynspeare Cessaro</h1>
+    <p>
+      You have successfully signed up,
+      Welcome to the worlds finest Code Pairing family.<br>
+    </p>
+
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+ -->
+----==_mimepart_590673cf50290_154c03fec01685d6c4678d--
+
+Completed 500 Internal Server Error in 618ms (ActiveRecord: 161.4ms)
+
+
+  
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  
+app/models/user.rb:24:in `send_confirmation_email'
+app/models/user.rb:19:in `create_with_omniauth'
+app/controllers/sessions_controller.rb:5:in `create'
+Started GET "/auth/github/callback?code=1e2911fb5a4569511d0d&state=871345cdf22c2b7baacdc99515ea9939d65f9462ca03c511" for ::1 at 2017-04-30 18:32:44 -0500
+  
+OAuth2::Error (bad_verification_code: The code passed is incorrect or expired.
+error=bad_verification_code&error_description=The+code+passed+is+incorrect+or+expired.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23bad-verification-code):
+  
+oauth2 (1.3.1) lib/oauth2/client.rb:149:in `get_token'
+oauth2 (1.3.1) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.4.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-oauth2 (1.4.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth (1.6.1) lib/omniauth/strategy.rb:230:in `callback_call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:187:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+omniauth (1.6.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2017-04-30 18:32:48 -0500
+Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-04-30 18:32:48 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_side_bar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 132ms (Views: 128.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-30 18:32:49 -0500
+Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-04-30 18:32:49 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_side_bar.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (2.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+Started GET "/auth/github" for ::1 at 2017-04-30 18:33:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/auth/github/callback?code=a0c9bb79bd04fa77fb84&state=5fd2a46670da6c572162b80e31adfff072214ac4c18327d3" for ::1 at 2017-04-30 18:34:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"a0c9bb79bd04fa77fb84", "state"=>"5fd2a46670da6c572162b80e31adfff072214ac4c18327d3", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "github"], ["uid", "24721051"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "provider", "uid", "name", "nickname", "repos_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "CAROLINEWYNSPEARE@GMAIL.COM"], ["provider", "github"], ["uid", "24721051"], ["name", "Caroline Wynspeare Cessaro"], ["nickname", "wynspeare"], ["repos_url", "https://api.github.com/users/wynspeare/repos"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+UserMailer#welcome_email: processed outbound mail in 50.7ms
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 11.7ms)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/mailer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Michael/PPD/reviews/app/views"
+):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/models/user.rb:24:in `send_confirmation_email'
+app/models/user.rb:19:in `create_with_omniauth'
+app/controllers/sessions_controller.rb:5:in `create'
+Started GET "/auth/github/callback?code=a0c9bb79bd04fa77fb84&state=5fd2a46670da6c572162b80e31adfff072214ac4c18327d3" for ::1 at 2017-04-30 18:35:04 -0500
+  
+OAuth2::Error (bad_verification_code: The code passed is incorrect or expired.
+error=bad_verification_code&error_description=The+code+passed+is+incorrect+or+expired.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23bad-verification-code):
+  
+oauth2 (1.3.1) lib/oauth2/client.rb:149:in `get_token'
+oauth2 (1.3.1) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.4.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-oauth2 (1.4.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth (1.6.1) lib/omniauth/strategy.rb:230:in `callback_call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:187:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+omniauth (1.6.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2017-04-30 18:35:09 -0500
+Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-04-30 18:35:09 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_side_bar.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 866ms (Views: 862.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 15]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/sessions/new" for ::1 at 2017-04-30 18:35:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_side_bar.html.erb (64.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1177ms (Views: 1169.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for ::1 at 2017-04-30 18:36:01 -0500
+Started GET "/auth/github/callback?code=b6da6d3a2d860784ba18&state=9a22a7814fafb3fac3a303c0a87505f029df20dc3ac3021e" for ::1 at 2017-04-30 18:36:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b6da6d3a2d860784ba18", "state"=>"9a22a7814fafb3fac3a303c0a87505f029df20dc3ac3021e", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "github"], ["uid", "24721051"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "provider", "uid", "name", "nickname", "repos_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "CAROLINEWYNSPEARE@GMAIL.COM"], ["provider", "github"], ["uid", "24721051"], ["name", "Caroline Wynspeare Cessaro"], ["nickname", "wynspeare"], ["repos_url", "https://api.github.com/users/wynspeare/repos"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.5ms)
+  Rendering user_mailer/welcome_email.text.erb
+  Rendered user_mailer/welcome_email.text.erb (0.4ms)
+UserMailer#welcome_email: processed outbound mail in 413.7ms
+Sent mail to CAROLINEWYNSPEARE@GMAIL.COM (29.2ms)
+Date: Sun, 30 Apr 2017 18:36:12 -0500
+From: ppearing@gmail.com
+To: CAROLINEWYNSPEARE@GMAIL.COM
+Message-ID: <590674eca6834_15a933fc06b382758746e2@MICHAELs-MacBook-Air-2.local.mail>
+Subject: Welcome to Pearing!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_590674eca25b7_15a933fc06b382758745cc";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_590674eca25b7_15a933fc06b382758745cc
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to Pearing Caroline Wynspeare Cessaro
+===============================================
+ 
+You have successfully signed up!
+      
+Welcome to the world's finest Code Pairing family.
+ 
+Thanks for joining and have a great day!
+----==_mimepart_590674eca25b7_15a933fc06b382758745cc
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Pearing Caroline Wynspeare Cessaro</h1>
+    <p>
+      You have successfully signed up,
+      Welcome to the worlds finest Code Pairing family.<br>
+    </p>
+
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+----==_mimepart_590674eca25b7_15a933fc06b382758745cc--
+
+Completed 500 Internal Server Error in 538ms (ActiveRecord: 17.0ms)
+
+
+  
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  
+app/models/user.rb:24:in `send_confirmation_email'
+app/models/user.rb:19:in `create_with_omniauth'
+app/controllers/sessions_controller.rb:5:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(206482738602696885);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddCronToDelayedJobs (20170430234633)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddCronToDelayedJobs < ActiveRecord::Migration[4.2] (called from load at /Users/Michael/.rbenv/versions/2.4.0/bin/rake:22)
+  [1m[35m (59.4ms)[0m  [1m[35mALTER TABLE "delayed_jobs" ADD "cron" character varying[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170430234633"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(206482738602696885)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (4.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2017-04-30 19:02:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-04-30 19:02:11 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_side_bar.html.erb (60.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 793ms (Views: 785.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for ::1 at 2017-04-30 19:02:15 -0500
+Started GET "/auth/github/callback?code=50a21ea891a5fec6a555&state=082035b5e4c5446315ae7608d2f24a0faf4c86a66a9bd788" for ::1 at 2017-04-30 19:03:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"50a21ea891a5fec6a555", "state"=>"082035b5e4c5446315ae7608d2f24a0faf4c86a66a9bd788", "provider"=>"github"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "github"], ["uid", "24721051"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "provider", "uid", "name", "nickname", "repos_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "CAROLINEWYNSPEARE@GMAIL.COM"], ["provider", "github"], ["uid", "24721051"], ["name", "Caroline Wynspeare Cessaro"], ["nickname", "wynspeare"], ["repos_url", "https://api.github.com/users/wynspeare/repos"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/welcome_email.text.erb
+  Rendered user_mailer/welcome_email.text.erb (0.4ms)
+UserMailer#welcome_email: processed outbound mail in 385.1ms
+Sent mail to CAROLINEWYNSPEARE@GMAIL.COM (36.9ms)
+Date: Sun, 30 Apr 2017 19:03:48 -0500
+From: ppearing@gmail.com
+To: CAROLINEWYNSPEARE@GMAIL.COM
+Message-ID: <59067b647a1de_171b73fe2cb0515c0584ca@MICHAELs-MacBook-Air-2.local.mail>
+Subject: Welcome to Pearing!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_59067b6474d26_171b73fe2cb0515c05839a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_59067b6474d26_171b73fe2cb0515c05839a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to Pearing Caroline Wynspeare Cessaro
+===============================================
+ 
+You have successfully signed up!
+      
+Welcome to the world's finest Code Pairing family.
+ 
+Thanks for joining and have a great day!
+----==_mimepart_59067b6474d26_171b73fe2cb0515c05839a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Pearing Caroline Wynspeare Cessaro</h1>
+    <p>
+      You have successfully signed up,
+      Welcome to the worlds finest Code Pairing family.<br>
+    </p>
+
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+----==_mimepart_59067b6474d26_171b73fe2cb0515c05839a--
+
+Completed 500 Internal Server Error in 531ms (ActiveRecord: 25.2ms)
+
+
+  
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  
+app/models/user.rb:24:in `send_confirmation_email'
+app/models/user.rb:19:in `create_with_omniauth'
+app/controllers/sessions_controller.rb:5:in `create'
