@@ -1,5 +1,11 @@
 class CalendarController < ApplicationController
 
+  def index
+    CalendarController.create_weekly_schedule
+    @post  = CalendarController.pairing_schedule(current_user)
+    schedule = generate_pairs
+    render json: schedule
+  end
 
   def self.pairing_schedule (user = current_user)
     user_sessions = user.pairing_sessions
