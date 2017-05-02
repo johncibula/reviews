@@ -1,6 +1,15 @@
 import React from 'react'
 
+
 export default class Calendar extends React.Component {
+
+  constructor(props) {
+     super(props);
+     this.state = {
+        days: props
+     };
+     this.handleClick.bind(this)
+   }
 
   generateDays(props){
     const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
@@ -12,6 +21,21 @@ export default class Calendar extends React.Component {
     return dayComponents;
   }
 
+  handleClick(e){
+    e.preventDefault();
+    $.ajax({
+      url: `/calendar/index`,
+      type: 'PUT',
+      me: this,
+      success:  (data) => {
+        this.setState({
+          days: data
+        })
+        this.render
+      }
+    })
+  }
+
   render() {
       return (
         <div className="Calendar">
@@ -21,8 +45,10 @@ export default class Calendar extends React.Component {
               <th style={{border: "1px solid black"}}>Day</th>
               <th style={{border: "1px solid black"}}>Pair</th> 
             </tr>
-            {this.generateDays(this.props)}
-            
+            {this.generateDays(this.state.days)}
+            <button onClick={this.handleClick.bind(this)}>
+              Create Pair
+            </button>
           </table>
         </div>
       );

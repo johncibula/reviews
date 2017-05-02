@@ -35,10 +35,7 @@ export default class PostList extends React.Component {
   }
 
   handleDelete(id) {
-    $.ajax({
-      url: `/posts/`+id,
-      type: 'DELETE'
-    });
+
 
   }
 
