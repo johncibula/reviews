@@ -1,7 +1,7 @@
 
 <%# link_to 'Write a new review', new_post_path %>
 <div class="posts index">
-  <h2> Received Reviews </h2>
+  <h2> RECEIVED REVIEWS </h2>
     <% if @check_number == 0 %>
   <% else %>
     You don't have any reviews yet.
@@ -12,8 +12,14 @@
   <div id="new_post">
 
 </div>
-  <h2> Reviews I have written </h2>
+<br />
+<div style="border-bottom: 4px solid black">
+</div>
+  <h2 style="float:left" > REVIEWS I HAVE WRITTEN</h2>
+
     <%# link_to 'New', 'posts/new', remote: true %>
     <br />
+
+
     <%= react_component("PostList", props: {posts: @sent_posts_test, members: @users}, prerender: false) %>
 </div>

@@ -58,9 +58,11 @@ export default class PostList extends React.Component {
     return (
       <div>
         <div>
-          <button className="button1"onClick={this.handleClick}>
-            New Review
+        <div style={{paddingBottom:"30px"}} >
+          <button className="button1" style={{float: "right"}} onClick={this.handleClick}>
+            Add New Review
           </button>
+          </div>
           <br />
           <br />
           {this.state.showComponent ?
