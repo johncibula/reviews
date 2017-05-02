@@ -5,9 +5,9 @@ export default class NewReview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-                  admin_message: 'f',
+                  admin_message: '',
                   recipient_id: "test",
-                  content: 'f',
+                  content: '',
                   willing_to_work: 'f',
                   rating: "0",
                   };
@@ -109,7 +109,8 @@ export default class NewReview extends React.Component {
           <label>
             <h3>What should the cadre know to help them improve?
             </h3>
-            <textarea value={this.state.admin_message} onChange={this.handleAdminChange} />
+            <p> All feedback for this question is only read by your instructor </p>
+            <textarea placeholder="Place your feedback here" value={this.state.admin_message} onChange={this.handleAdminChange} />
           </label>
           <br />
           <label>
@@ -118,14 +119,15 @@ export default class NewReview extends React.Component {
           </label>
           <br />
           <label>
-            <h3>Overall, how would you rate working with them [0 - 5]?
+            <h3>Overall, how would you rate working with them?
             </h3>
+            <p>(0 - terrible to 5 - awesome)</p>
             {this.listRatingChoices()}
           </label>
           <br />
           <label>
             <h3>What are they doing great, what could they do better?</h3>
-            <textarea value={this.state.content} onChange={this.handleContentChange} />
+            <textarea placeholder="They are great at explaining, but could talk slower..." value={this.state.content} onChange={this.handleContentChange} />
           </label>
           <br />
           <input type='submit' className="button1" value="Submit" />
