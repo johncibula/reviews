@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :received_posts, class_name: 'Post', foreign_key: :recipient_id
   has_many :user_pairing_sessions
   has_many :pairing_sessions, :through => :user_pairing_sessions
+  after_create :seed_with_reviews
 
   def self.create_with_omniauth(auth)
     my_user = nil
@@ -20,6 +21,22 @@ class User < ActiveRecord::Base
       User.send_confirmation_email(my_user) 
       User.send_5pm_email(my_user)
       User.send_weekly_email(my_user)
+  end
+
+  def seed_with_reviews(user = self)
+    p "Existing #{Post.count} Post"
+   Post.create!({ admin_message: "Pairing with them was great",content: "You are such a great person. I really appreciate your feedback. I hope to pair with you again soon!", sender_id: "1", recipient_id: user.id.to_s, rating: 4 })
+
+   Post.create!({ admin_message: "Pairing with them was great",content: "Have a great day. I hope you have a great day!", sender_id: "1", recipient_id: user.id.to_s, rating: 4 })
+
+   Post.create!({ admin_message: "Pairing with them was great",content: "Don't you love this awesome webapp it was built with tender, love, and care.", sender_id: "1", recipient_id: user.id.to_s, rating: 4 })
+
+   Post.create!({ admin_message: "Pairing with them was great",content: "I'm pretty sure my partner farted and didn't own up to it", sender_id: "1", recipient_id: user.id.to_s, rating: 4 })
+
+   Post.create!({ admin_message: "Pairing with them was great",content: "Deep doubts, deep wisdom; small doubts, little wisdom.", sender_id: "1", recipient_id: user.id.to_s, rating: 4 })
+
+   Post.create!({ admin_message: "Pairing with them was great",content: "A gem is not polished without rubbing, nor a man perfected without trials.", sender_id: "1", recipient_id: user.id.to_s, rating: 4 })
+   p "Created #{Post.count} Post"
   end
 
   def self.send_confirmation_email(user)
