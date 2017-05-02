@@ -99,7 +99,11 @@ export default class NewReview extends React.Component {
     console.log(this.state)
     return (
 
-      <div className="post">
+      <div className="post panel panel-default *">
+      <div className="panel-heading" style={{backgroundColor: "white", borderBottom: "4px solid black"}} >
+      <h1>New Review</h1>
+      </div>
+      <div className="panel-body">
         <form onSubmit={this.handleSubmit}>
           <label>
           <h3>Who are you reviewing?</h3>
@@ -110,7 +114,7 @@ export default class NewReview extends React.Component {
             <h3>What should the cadre know to help them improve?
             </h3>
             <p> All feedback for this question is only read by your instructor </p>
-            <textarea placeholder="Place your feedback here" value={this.state.admin_message} onChange={this.handleAdminChange} />
+            <textarea style={{width: "100%", height: "80px"}} placeholder="Place your feedback here" value={this.state.admin_message} onChange={this.handleAdminChange} />
           </label>
           <br />
           <label>
@@ -127,11 +131,12 @@ export default class NewReview extends React.Component {
           <br />
           <label>
             <h3>What are they doing great, what could they do better?</h3>
-            <textarea placeholder="They are great at explaining, but could talk slower..." value={this.state.content} onChange={this.handleContentChange} />
+            <textarea style={{width: "100%", height: "80px"}} placeholder="They are great at explaining, but could talk slower..." value={this.state.content} onChange={this.handleContentChange} />
           </label>
           <br />
           <input type='submit' className="button1" value="Submit" />
         </form>
+      </div>
       </div>
     );
   }

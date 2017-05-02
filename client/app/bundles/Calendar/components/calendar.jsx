@@ -39,8 +39,10 @@ export default class Calendar extends React.Component {
   render() {
       return (
         <div className="Calendar panel panel-default *">
+        <div className="panel-heading" style={{backgroundColor: "white", borderBottom: "4px solid black"}} >
+        <h1>Pair Schedule</h1>
+        </div>
         <div className="panel-body">
-          <h1>Pair Schedule</h1>
           <table style={{width: "100%"}}>
             <tr >
               <th style={{borderBottom: "1px solid black", padding: "5px"}}>Day</th>

@@ -58,9 +58,11 @@ export default class PostList extends React.Component {
     return (
       <div>
         <div>
-          <button onClick={this.handleClick}>
+          <button className="button1"onClick={this.handleClick}>
             New Review
           </button>
+          <br />
+          <br />
           {this.state.showComponent ?
             <NewReview members={this.props.members} unshowComponent={this.unshowComponent} /> :
             null}
