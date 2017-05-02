@@ -45,12 +45,12 @@ export default class PostList extends React.Component {
     var handleDelete = this.handleDelete
     var removeClient = this.removeItemClient
     var array = Object.keys(reviews)
-    console.log(reviews[array[0]])
+    var unshow = this.unshowComponent
 
     const posts = Object.keys(reviews).map(function(post) {
       console.log(reviews[post])
     return (
-      <Post key={reviews[post].id} handleDelete={handleDelete} post={reviews[post]} removeClient={removeClient} that={that} />
+      <Post key={reviews[post].id} handleDelete={handleDelete} post={reviews[post]} removeClient={removeClient} that={that} unshow={unshow} />
       );
 
     });
@@ -69,8 +69,6 @@ export default class PostList extends React.Component {
           {posts}
         </div>
       </div>
-      )
-    }
-
-
+    )
+  }
 }

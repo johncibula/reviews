@@ -33,6 +33,7 @@ class PostsController < ApplicationController
     @post.sender_id = current_user.id
     if @post.save
       flash[:notice] = "Successfully created post"
+        render json:{status: :true}
     else
       flash[:alert] = "Error creating new post!"
       render 'new'
@@ -50,7 +51,7 @@ class PostsController < ApplicationController
   def update
     @post= Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post
+      render json: { status: :true }
     else
       render 'edit'
     end

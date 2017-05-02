@@ -25,11 +25,6 @@ export default class NewReview extends React.Component {
       });
   }
 
-  // componentWillUnmount()  {
-  //   // clean up the handler when the component is removed:
-  //   $('#tab-2').off('shown.bs.tab', this._handleTabShow)
-  // }
-
   handleRecipientChange(event) {
       this.setState({recipient_id: event.target.value});
     }
