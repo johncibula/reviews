@@ -42,7 +42,7 @@ export default class NewReview extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state)
+
     $.ajax({
       url: "/posts",
             dataType: 'json',
