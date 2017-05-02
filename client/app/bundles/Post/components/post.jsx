@@ -35,11 +35,12 @@ export default class Post extends React.Component {
 
   render() {
     return (
+
       <div className="post">
-        <button onClick={this.showComponent}>Edit
+        <button className="button3" onClick={this.showComponent}>Edit
         </button>
-        <a href={"/posts/" + this.props.post.id}>Show</a>
-        <button onClick={this.handleDelete.bind(this,this.props.post.id)}>
+        {/*<a href={"/posts/" + this.props.post.id}>Show</a>*/}
+        <button className="button3" onClick={this.handleDelete.bind(this,this.props.post.id)}>
           Delete
         </button>
         <PostHeader post={this.props.post} />
@@ -59,8 +60,8 @@ export default class Post extends React.Component {
       console.log('this.props.post')
       console.log(this.props.post)
       return (
-        <div className="post-header">
-          <h2>{this.props.post.rating}</h2>
+        <div className="post-header" style={{borderBottom: "1px solid black"}}>
+          <h3>Rating: {this.props.post.rating}</h3>
         </div>
       );
     }
@@ -69,7 +70,7 @@ export default class Post extends React.Component {
   var PostContent = React.createClass({
     render: function() {
       return (
-        <div className="post-contents">
+        <div className="post-contents" style={{borderBottom: "4px solid black", paddingTop: "40px",paddingBottom: "40px"}}>
           {this.props.post.content}
         </div>
       );
