@@ -53,12 +53,14 @@
 }
 .main {
   float: right;
+  bottom:0;
+  z-index: -1;
   width:70%;
   padding: 30px;
   border-left-style: solid;
   border-width: 5px;
   border-color: black;
-  /*background: yellow;*/
+  
 }
 
 
@@ -68,11 +70,10 @@
     overflow: hidden;
     width: 100%;
     font-family: "Oswald";
-
     position:absolute;
-    left:0; right:0;
+    left:0; right:0; top:0;
     height: 75px;
-
+    
 }
 
 /* Style the links inside the navigation bar */
@@ -86,7 +87,6 @@
     text-decoration: none;
     font-size: 17px;
     margin-left: 20px;
-
 }
 
 /* Change the color of links on hover */
@@ -176,6 +176,32 @@
   padding: 20px;
 }
 
+.button3 {
+  font-family: "Oswald";
+  float: right;
+  background-color:black;
+  color:white;
+  border-style: solid;
+  border-width: 0px;
+  border-color: black;
+  padding: 8px;
+  margin-left:5px;
+}
+
+/*.button3 {
+  font-family: "Oswald";
+  background-color:white;
+  color:black;
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
+  padding: 5px;
+}*/
+
+.button3:hover {
+  background-color:grey;
+}
+
 * {
   border-radius: 0 !important;
 }
@@ -189,8 +215,10 @@
 
 .footer h4 {
   margin: auto;
-  margin-top: 2vh;
+  /*margin-top: 2vh;*/
+  height: 30px;
   text-align: right;
   padding-right: 15px;
+  padding-top: 15px;
 
 }
