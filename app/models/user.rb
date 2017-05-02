@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
       end
       User.send_confirmation_email(my_user) 
       User.send_5pm_email(my_user)
-      #User.send_weekly_email(my_user)
+      User.send_weekly_email(my_user)
   end
 
   def self.send_confirmation_email(user)
@@ -29,13 +29,13 @@ class User < ActiveRecord::Base
   end
 
 
-  def self.send_5pm_email(user)  #Method to send 5pm email with delayed job cron
+  def self.send_5pm_email(user)  #Send weekday 5pm email with delayed job cron
     Send5pmEmailJob.set(cron: '0 17 * * 1,2,3,4,5').perform_later(@user) 
   end
 
-  # def self.send_weekly_email(user)  #Method to send 7am Saturday email delayed job cron
-  #   SendWeeklyEmailJob.set(cron: '0 7 * * 6').perform_later(@user) 
-  # end
+  def self.send_weekly_email(user)  #Send 7am Saturday email delayed job cron
+    SendWeeklyEmailJob.set(cron: '0 7 * * 6').perform_later(@user) 
+  end
 
   def self.all_except(user)
     where.not(id: user)

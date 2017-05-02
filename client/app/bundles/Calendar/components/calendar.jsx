@@ -38,18 +38,21 @@ export default class Calendar extends React.Component {
 
   render() {
       return (
-        <div className="Calendar">
+        <div className="Calendar panel panel-default *">
+        <div className="panel-body">
           <h1>Pair Schedule</h1>
           <table style={{width: "100%"}}>
             <tr >
-              <th style={{border: "1px solid black"}}>Day</th>
-              <th style={{border: "1px solid black"}}>Pair</th> 
+              <th style={{borderBottom: "1px solid black", padding: "5px"}}>Day</th>
+              <th style={{borderBottom: "1px solid black", padding: "5px"}}>Pair</th> 
             </tr>
             {this.generateDays(this.state.days)}
-            <button onClick={this.handleClick.bind(this)}>
-              Create Pair
-            </button>
+            <br />
           </table>
+          <button type="button" className="button1" onClick={this.handleClick.bind(this)}>
+            Create Pair
+          </button>
+        </div>
         </div>
       );
   }
@@ -59,12 +62,12 @@ var Day = React.createClass({
     render: function() {
         return (
             <tr >
-                <td style={{border: "1px solid black"}}>{this.props.day}</td>
+                <td style={{borderBottom: "1px solid black", padding: "5px"}}>{this.props.day}</td>
                 {
-                  this.props.pair && <td style={{border: "1px solid black"}}>{this.props.pair}</td>
+                  this.props.pair && <td style={{borderBottom: "1px solid black", padding: "5px"}}>{this.props.pair}</td>
                 }
                 {
-                  !this.props.pair && <td style={{border: "1px solid black"}}>Solo</td>
+                  !this.props.pair && <td style={{borderBottom: "1px solid black", padding: "5px"}}>Solo</td>
                 }
             </tr>
         );

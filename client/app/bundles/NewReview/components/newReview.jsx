@@ -100,34 +100,35 @@ export default class NewReview extends React.Component {
     return (
 
       <div className="post">
-        test
         <form onSubmit={this.handleSubmit}>
           <label>
-          Who are you reviewing?
+          <h3>Who are you reviewing?</h3>
           {this.listMembers(this.props.members)}
           </label>
           <br />
           <label>
-            What should the cadre know to help them improve?
+            <h3>What should the cadre know to help them improve?
+            </h3>
             <textarea value={this.state.admin_message} onChange={this.handleAdminChange} />
           </label>
           <br />
           <label>
-            Are you willing to work with this person again?
+            <h3>Are you willing to work with this person again?</h3>
             {this.listWorkChoices()}
           </label>
           <br />
           <label>
-            Overall, how would you rate working with them [0 - 5]?
+            <h3>Overall, how would you rate working with them [0 - 5]?
+            </h3>
             {this.listRatingChoices()}
           </label>
           <br />
           <label>
-            What are they doing great, what could they do better?
+            <h3>What are they doing great, what could they do better?</h3>
             <textarea value={this.state.content} onChange={this.handleContentChange} />
           </label>
           <br />
-          <input type='submit' value="Submit" />
+          <input type='submit' className="button1" value="Submit" />
         </form>
       </div>
     );
