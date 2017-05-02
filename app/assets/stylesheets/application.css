@@ -21,6 +21,23 @@
     position: relative;
     width: 100%;
     display: block;
+    font-family: "Open Sans";
+  }
+
+  h1 {
+    font-family: "Oswald";
+  }
+
+  h2 {
+    font-family: "Oswald";
+  }
+
+  h3 {
+    font-family: "Oswald";
+  }
+
+  h4 {
+    font-family: "Oswald";
   }
 
   body > *  {
@@ -35,8 +52,10 @@
 }
 .main {
   float: right;
-  width:85%;
-  background: yellow;
+  width:70%;
+  height: 100%;
+  padding: 40px;
+  /*background: yellow;*/
 }
 
 
@@ -45,10 +64,11 @@
     background-color: #333;
     overflow: hidden;
     width: 110%;
+    font-family: "Oswald";
 
     position:absolute;
     left:0; right:0;
-    height: 92px;
+    height: 75px;
 
 }
 
@@ -106,16 +126,50 @@
 .sidebar {
     float:left;
     left:0; top:92px; bottom: 0;
-    width: 15%;
-    background-color: grey;
+    width: 30%;
+    height:100%;
+    /*background-color: grey;*/
+    border-right-style: solid;
+    border-width: 5px;
+    border-color: black;
+    padding: 30px;
+}
+
+.button1 {
+  font-family: "Oswald";
+  background-color:white;
+  color:black;
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
+  padding: 15px;
+}
+
+.button1:hover {
+  font-family: "Oswald";
+  background-color:#e5e5e5;
+  color:black;
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
+  padding: 15px;
+}
+
+* {
+  border-radius: 0 !important;
 }
 
 .footer {
-  background-color:orange;
-  width: 120%;
+  background-color:black;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 .footer h3 {
   margin: auto;
-  margin-top: 15vh;
+  margin-top: 5vh;
+  text-align: right;
+  padding-right: 15px;
+
 }
