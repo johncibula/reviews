@@ -6,13 +6,22 @@ export default class Post extends React.Component {
     this.state = { 
       showEdit: false
     }
+    this.showEdit.bind(this)
   }
 
-  showEdit(id){
+  showSubmission(p = null){
+    if(p){
+      this.props.post.admin_message = p["admin_message"]
+      this.props.post.content = p["content"]
+      this.props.post.willing_to_work = p["willing_to_work"]
+      this.props.post.rating = p["rating"]
+    }
+    this.showEdit()
+  }
+  showEdit(){
     this.setState({
       showEdit: this.state.showEdit?false:true
     })
-    this.render
   }
 
   render() {
@@ -35,7 +44,7 @@ export default class Post extends React.Component {
             Delete
           </button>
           {
-            this.state.showEdit && <p><EditReview post={this.props.post} handleClick={this.handleClick} /> </p>
+            this.state.showEdit && <p><EditReview post={this.props.post} handleClick={this.handleClick} unshow={this.showSubmission.bind(this)}parent={this.props.parent} /> </p>
           }
         </td>
       </div>

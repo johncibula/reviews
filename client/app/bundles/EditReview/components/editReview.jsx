@@ -47,9 +47,9 @@ export default class NewReview extends React.Component {
       url: `/posts/` + this.props.post.id,
       dataType: 'json',
       type: 'PATCH',
-      data: {post: this.state}
+      data: {post: this.state},
     });
-    unshowComponent()
+    this.props.unshow(this.state)
   }
 
   listMembers(members) {
@@ -102,6 +102,10 @@ export default class NewReview extends React.Component {
     return (
 
       <div className="post">
+        <br />
+        <br />
+        <br />
+        <br />
         <form onSubmit={this.handleSubmit}>
           <br />
           <label>
