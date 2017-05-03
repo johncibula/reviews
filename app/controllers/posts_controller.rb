@@ -2,17 +2,22 @@ class PostsController < ApplicationController
   attr_accessor :sent_posts, :users
 
   def index
-    if !current_user
-      redirect_to('/sessions/new')
+    begin 
+      @sent = {
+        "type" => "sent",
+        "reviews" => current_user.sent_posts,
+        "members" => User.all_except(current_user)
+       }
+      @recieved = {
+        "type" => "recieved",
+        "reviews" => current_user.received_posts,
+        "members" => User.all_except(current_user)
+      }
+    rescue
+      @sent = {}
+      @recieved = {}
+      @members = Post.new
     end
-    @sent = {
-      "type" => "sent",
-      "reviews" => current_user.sent_posts
-     }
-    @recieved = {
-      "type" => "recieved",
-      "reviews" => current_user.received_posts
-    }
   end
 
   def new
@@ -57,7 +62,7 @@ class PostsController < ApplicationController
       # redirect_to posts_path
     else
       flash[:alert] = "Errors deleting post!"
-      render 'destroy'
+      # render 'destroy'
     end
   end
 

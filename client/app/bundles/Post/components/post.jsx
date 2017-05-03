@@ -40,7 +40,7 @@ export default class Post extends React.Component {
               Edit
             </button>
           }
-          <button className="button3" onClick={this.props.handleDelete.bind(this)}>
+          <button className="button3" onClick={(id) => this.props.handleDelete(this.props.post.id)}>
             Delete
           </button>
           {

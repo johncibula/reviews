@@ -5,32 +5,38 @@ import NewReview from '../../NewReview/components/newReview'
 export default class PostList extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick.bind(this);
     this.state = { 
       reviews: this.props["reviews"],
       type: this.props["type"],
-      users: this.props["users"]
+      showNew: false,
+      members: this.props["members"]
     }
   }
 
-  handleClick(event) {
-    console.log("TODO handleClick, event: " + event)
+  showNewForm() {
+    this.setState({
+      showNew: this.state.showNew?false:true ,
+      reviews: this.state.reviews,
+      type: this.state.type,
+      users: this.state.users
+    })
+    this.render()
   }
 
   handleDelete(id) {
     $.ajax({
       url: "/posts/"+id,
       type: 'DELETE',
-      parent: this,
-      sucess: () => {
-        this.render
+      component: this,
+      success:  () => {
+        this.render()
       }
     });
   }
   newReviewButton( ) {
     if(this.state.type === "sent") {
       return (
-        <button className="button1" style={{float: "right"}} onClick={this.handleClick}>
+        <button className="button1" style={{float: "right"}} onClick={this.showNewForm.bind(this)}>
           Add New Review
         </button>
       )
@@ -48,15 +54,33 @@ export default class PostList extends React.Component {
 
   render() {
     return (
-      <table style={{width: "100%"}}>
-        <tr>
-          <th >Title</th>
-          <th >Content</th>
-          <th ></th> 
-          <th ></th> 
-        </tr>
-        {this.getPosts()}
-      </table>
+      <div>
+        {this.newReviewButton()}
+        { 
+          this.state.showNew &&
+          <div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          
+            <NewReview members={this.props.members} />
+          </div>
+        }
+        {
+          !this.state.showNew &&
+          <table>
+            <tr>
+              <th >Title</th>
+              <th >Content</th>
+              <th >Delete</th> 
+              <th >Edit</th> 
+            </tr>
+            {this.getPosts()}
+          </table>
+        } 
+      </div>
     );
   }
 }

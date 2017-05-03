@@ -6,9 +6,9 @@ export default class NewReview extends React.Component {
     super(props);
     this.state = {
                   admin_message: '',
-                  recipient_id: "test",
+                  recipient_id: "",
                   content: '',
-                  willing_to_work: 'f',
+                  willing_to_work: '',
                   rating: "0",
                   };
 
@@ -47,10 +47,12 @@ export default class NewReview extends React.Component {
       url: "/posts",
             dataType: 'json',
             type: 'POST',
-            data: {post: this.state}
+            data: {
+              post: this.state
+            }
     });
     unshowComponent()
-     event.preventDefault();
+    event.preventDefault();
   }
 
   listMembers(members) {
