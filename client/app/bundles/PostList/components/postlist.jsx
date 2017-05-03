@@ -11,6 +11,7 @@ export default class PostList extends React.Component {
       showNew: false,
       members: this.props["members"]
     }
+    this.handleDelete.bind(this)
   }
 
   showNewForm() {
@@ -20,18 +21,17 @@ export default class PostList extends React.Component {
       type: this.state.type,
       users: this.state.users
     })
-    this.render()
   }
 
   handleDelete(id) {
     $.ajax({
       url: "/posts/"+id,
       type: 'DELETE',
-      component: this,
-      success:  () => {
+      sucess:  () =>{
         this.render()
       }
     });
+    console.log("delete")
   }
   newReviewButton( ) {
     if(this.state.type === "sent") {
@@ -47,7 +47,7 @@ export default class PostList extends React.Component {
     const reviews = this.state.reviews
     let posts = []
     for (var review_index = 0; review_index < reviews.length; review_index++){
-      posts.push(<tr><Post key={reviews[review_index]} handleDelete={(id) => this.handleDelete(id)} type={this.state.type} post={reviews[review_index]} parent={this}/> </tr>)
+      posts.push(<tr><Post key={reviews[review_index]} handleDelete={ this.handleDelete} type={this.state.type} post={reviews[review_index]} parent={this}/> </tr>)
     }
     return posts
   }
