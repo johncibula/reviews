@@ -41,7 +41,7 @@ export default class PostList extends React.Component {
     const reviews = this.state.reviews
     let posts = []
     for (var review_index = 0; review_index < reviews.length; review_index++){
-      posts.push(<tr><Post key={reviews[review_index]} handleDelete={(id) => this.handleDelete(id)} post={reviews[review_index]} parent={this}/> </tr>)
+      posts.push(<tr><Post key={reviews[review_index]} handleDelete={(id) => this.handleDelete(id)} type={this.state.type} post={reviews[review_index]} parent={this}/> </tr>)
     }
     return posts
   }

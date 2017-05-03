@@ -24,9 +24,12 @@ export default class Post extends React.Component {
           <PostContent post={this.props.post} />
         </td>
         <td>
-          <button className="button3" onClick={(id) => this.edit(post.id)}>
-            Edit
-          </button>
+          {
+            (this.props.type === "sent") && 
+            <button className="button3" onClick={(id) => this.edit(post.id)}>
+              Edit
+            </button>
+          }
           <button className="button3" onClick={this.props.handleDelete.bind(this)}>
             Delete
           </button>

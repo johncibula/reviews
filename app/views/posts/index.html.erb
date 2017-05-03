@@ -1,7 +1,7 @@
 
 <div class="posts index">
   <h2> RECEIVED REVIEWS </h2>
-  <% if 1 == 0 %>
+  <% if @recieved.size == 0 %>
     You don't have any reviews yet.
   <% else %>
     <%= react_component("PostList", props: @recieved, prerender: false)  %>
