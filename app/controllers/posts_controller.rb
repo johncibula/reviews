@@ -13,6 +13,9 @@ class PostsController < ApplicationController
       "type" => "recieved",
       "reviews" => current_user.received_posts
     }
+    @users = {
+      "users" => User.all_except(current_user)
+    }
   end
 
   def admin

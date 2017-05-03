@@ -5,12 +5,12 @@ export default class NewReview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-                  admin_message: this.props.post.admin_message,
-                  recipient_id: this.props.post.recipient_id,
-                  content: this.props.post.content,
-                  willing_to_work: this.props.post.willing_to_work,
-                  rating: this.props.post.rating,
-                  };
+        admin_message: this.props.post.admin_message,
+        recipient_id: this.props.post.recipient_id,
+        content: this.props.post.content,
+        willing_to_work: this.props.post.willing_to_work,
+        rating: this.props.post.rating,
+    };
 
     this.handleAdminChange = this.handleAdminChange.bind(this);
     this.handleRecipientChange = this.handleRecipientChange.bind(this);
@@ -22,7 +22,7 @@ export default class NewReview extends React.Component {
   componentDidMount() {
     window.addEventListener("load", function(event) {
         console.log("All resources finished loading!");
-      });
+    });
   }
 
   handleRecipientChange(event) {
@@ -42,15 +42,14 @@ export default class NewReview extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state)
+    event.preventDefault();
     $.ajax({
       url: `/posts/` + this.props.post.id,
-            dataType: 'json',
-            type: 'PATCH',
-            data: {post: this.state}
+      dataType: 'json',
+      type: 'PATCH',
+      data: {post: this.state}
     });
     unshowComponent()
-     event.preventDefault();
   }
 
   listMembers(members) {

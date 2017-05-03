@@ -4,13 +4,13 @@
   <% if 1 == 0 %>
     You don't have any reviews yet.
   <% else %>
-    <%= react_component("PostList", props: @sent, prerender: false)  %>
+    <%= react_component("PostList", props: @recieved, prerender: false)  %>
   <% end %>
 </div>
 
 <div class="posts index">
   <h2 > REVIEWS I HAVE WRITTEN</h2>
-    <%= react_component("PostList", props: @recieved, prerender: false)  %>
+    <%= react_component("PostList", props: @sent, prerender: false)  %>
   <br>
 </div>
 
