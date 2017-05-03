@@ -8,10 +8,11 @@ export default class Post extends React.Component {
     }
   }
 
-  edit(id){
+  showEdit(id){
     this.setState({
-      showEdit: true
+      showEdit: this.state.showEdit?false:true
     })
+    this.render
   }
 
   render() {
@@ -26,7 +27,7 @@ export default class Post extends React.Component {
         <td>
           {
             this.props.type === "sent" && 
-            <button className="button3" onClick={(id) => this.edit(post.id)}>
+            <button className="button3" onClick={this.showEdit.bind(this)}>
               Edit
             </button>
           }
@@ -34,7 +35,7 @@ export default class Post extends React.Component {
             Delete
           </button>
           {
-            this.state.showEdit && <EditReview post={this.props.post} handleClick={this.handleClick} /> 
+            this.state.showEdit && <p><EditReview post={this.props.post} handleClick={this.handleClick} /> </p>
           }
         </td>
       </div>
