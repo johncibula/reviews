@@ -31,6 +31,7 @@
 
   h2 {
     font-family: "Oswald";
+    line-height: 2;
   }
 
   h3 {
@@ -188,6 +189,25 @@
 
 .button3:hover {
   background-color:grey;
+  text-decoration: none;
+  color: white;
+}
+
+.button4 {
+  font-family: "Oswald";
+  background-color:black;
+  color:white;
+  border-style: solid;
+  border-width: 0px;
+  border-color: black;
+  padding: 8px;
+}
+
+.button4:hover {
+  background-color:grey;
+  text-decoration: none;
+  color: white;
+
 }
 
 .underline:hover {
@@ -196,6 +216,13 @@
 
 * {
   border-radius: 0 !important;
+}
+
+.profile {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
 }
 
 .footer {
@@ -207,6 +234,7 @@
 
 .footer h4 {
   margin: auto;
+  color: white;
   /*margin-top: 2vh;*/
   height: 30px;
   text-align: right;
