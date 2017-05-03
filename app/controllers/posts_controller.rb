@@ -2,17 +2,18 @@ class PostsController < ApplicationController
   attr_accessor :sent_posts, :users
 
   def index
+    @post = Post.new
+    @users = User.all_except(current_user)
+    @users = instance_to_hash(users)
     if !current_user
       redirect_to('/sessions/new')
+    else
+      @received_posts = Post.received_posts(current_user)
+      # @received_posts = @received_posts.serialize_hash
+      check_post_count
+      @sent_posts = Post.sent_posts(current_user)
+      @sent_posts_test = instance_to_hash(sent_posts)
     end
-    @sent = {
-      "type" => "sent",
-      "reviews" => current_user.sent_posts
-     }
-    @recieved = {
-      "type" => "recieved",
-      "reviews" => current_user.received_posts
-    }
   end
 
   def admin

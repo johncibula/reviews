@@ -1,16 +1,25 @@
 
+<%# link_to 'Write a new review', new_post_path %>
 <div class="posts index">
   <h2> RECEIVED REVIEWS </h2>
-  <% if 1 == 0 %>
-    You don't have any reviews yet.
+    <% if @check_number == 0 %>
   <% else %>
-    <%= react_component("PostList", props: @sent, prerender: false)  %>
+    You don't have any reviews yet.
   <% end %>
 </div>
 
 <div class="posts index">
-  <h2 > REVIEWS I HAVE WRITTEN</h2>
-    <%= react_component("PostList", props: @recieved, prerender: false)  %>
-  <br>
-</div>
+  <div id="new_post">
 
+</div>
+<br />
+<div style="border-bottom: 4px solid black">
+</div>
+  <h2 style="float:left" > REVIEWS I HAVE WRITTEN</h2>
+
+    <%# link_to 'New', 'posts/new', remote: true %>
+    <br />
+
+
+    <%= react_component("PostList", props: {posts: @sent_posts_test, members: @users}, prerender: false) %>
+</div>
