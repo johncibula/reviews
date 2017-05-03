@@ -5,77 +5,55 @@ import NewReview from '../../NewReview/components/newReview'
 export default class PostList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {posts: this.props.posts,
-                  showComponent: false}
-
-    this.handleClick = this.handleClick.bind(this);
-    this.unshowComponent = this.unshowComponent.bind(this);
+    this.handleClick.bind(this);
+    this.state = { reviews:  this.props["reviews"],
+      type: this.props["type"]
+    }
+    this.generateNewReviewButton.bind(this)
   }
 
   handleClick(event) {
-    this.setState({showComponent: true});
-  }
-
-  unshowComponent(event) {
-    this.setState({showComponent: false})
-  }
-
-  removeItemClient(id) {
-    var newPosts = {}
-
-    for (var key in this.state.posts) {
-      if (key !== id) {
-        newPosts[key] = this.state.posts[key]
-      }
-    }
-    console.log(newPosts)
-    console.log(this)
-    this.setState({ posts: newPosts })
-
+    this.setState = {data: this.props}
   }
 
   handleDelete(id) {
     $.ajax({
       url: "/posts/"+id,
-            type: 'DELETE'
+      type: 'DELETE',
+      parent: this,
+      sucess: () => {
+        this.render
+      }
     });
-
+  }
+  generateNewReviewButton( ) {
+    if(this.state.type === "sent") {
+      return (
+        <button className="button1" style={{float: "right"}} onClick={this.handleClick}>
+          Add New Review
+        </button>
+      )
+    }
   }
 
   render() {
-    var that = this
-    const reviews = this.state.posts
-    var handleDelete = this.handleDelete
-    var removeClient = this.removeItemClient
-    var array = Object.keys(reviews)
-    var unshow = this.unshowComponent
-
-    const posts = Object.keys(reviews).map(function(post) {
-      console.log(reviews[post])
-    return (
-      <Post key={reviews[post].id} handleDelete={handleDelete} post={reviews[post]} removeClient={removeClient} that={that} unshow={unshow} />
-      );
-
-    });
+    const reviews = this.state.reviews
+    console.log(reviews)
+    const posts = Object.keys(reviews).map((post) => {
+      return (
+        <Post key={reviews[post].id} handleDelete={this.handleDelete} post={reviews[post]} parentComponent={this}/>
+        );
+    })
 
     return (
-      <div>
-        <div>
-        <div style={{paddingBottom:"30px"}} >
-          <button className="button1" style={{float: "right"}} onClick={this.handleClick}>
-            Add New Review
-          </button>
-          </div>
-          <br />
-          <br />
-          {this.state.showComponent ?
-            <NewReview members={this.props.members} unshowComponent={this.unshowComponent} /> :
-            null}
-        </div>
-        <div>
-          {posts}
-        </div>
-      </div>
-    )
+      <table style={{width: "100%"}}>
+        <tr >
+          <th style={{borderBottom: "1px solid black", padding: "5px"}}>Day</th>
+          <th style={{borderBottom: "1px solid black", padding: "5px"}}>Pair</th> 
+        </tr>
+        {posts}
+        <br />
+      </table>
+    );
   }
 }
