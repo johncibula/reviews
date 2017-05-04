@@ -88,10 +88,14 @@ class PostsController < ApplicationController
     end
   end
 
-  def instance_to_hash(instance_variable)
+  def instance_to_hash(instance_variable ={})
     hash = {}
-    instance_variable.each do |instance|
-      hash[instance.id] = instance
+    begin
+      instance_variable.each do |instance|
+        hash[instance.id] = instance
+      end
+    rescue
+
     end
     hash
   end
