@@ -17,6 +17,8 @@ export default class Calendar extends React.Component {
     for (let day_indice = 0; day_indice < DAYS.length; day_indice++) {
       const day = DAYS[day_indice] 
       dayComponents.push(<Day day={day} pair={props[day]}></Day>);   
+      console.log(day);
+      console.log(props[day]);
     }
     return dayComponents;
   }
@@ -29,9 +31,8 @@ export default class Calendar extends React.Component {
       me: this,
       success:  (data) => {
         this.setState({
-          days: data
+          this: data
         })
-        this.render
       }
     })
   }
