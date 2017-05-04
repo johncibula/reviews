@@ -28,8 +28,6 @@ export default class PostList extends React.Component {
         newPosts[key] = this.state.posts[key]
       }
     }
-    console.log(newPosts)
-    console.log(this)
     this.setState({ posts: newPosts })
 
   }
@@ -51,7 +49,6 @@ export default class PostList extends React.Component {
     var unshow = this.unshowComponent
 
     const posts = Object.keys(reviews).map(function(post) {
-      console.log(reviews[post])
     return (
       <Post key={reviews[post].id} handleDelete={handleDelete} post={reviews[post]} removeClient={removeClient} that={that} unshow={unshow} />
       );
@@ -79,3 +76,5 @@ export default class PostList extends React.Component {
     )
   }
 }
+
+

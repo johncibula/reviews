@@ -3,3 +3,4 @@
 *.pid
 tmp/
 
+app/assets/webpack/webpack-bundle.js
