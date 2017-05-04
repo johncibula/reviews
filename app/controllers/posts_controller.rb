@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     @post.sender_id = current_user.id
     if @post.save
       flash[:notice] = "Successfully created post"
-      render json: {status: :true}
+      render body: nil
     else
       flash[:alert] = "Error creating new post!"
       render 'new'
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   def update
     @post= Post.find(params[:id])
     if @post.update(post_params)
-      render json: { status: :true }
+      render body: nil
     else
       render 'edit'
     end
@@ -63,7 +63,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.destroy
       flash[:notice] = "Successfully deleted post!"
-      # redirect_to posts_path
+      render body: nil
     else
       flash[:alert] = "Errors deleting post!"
       render 'destroy'
