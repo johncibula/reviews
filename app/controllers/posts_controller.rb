@@ -11,7 +11,7 @@ class PostsController < ApplicationController
       @received_posts = Post.received_posts(current_user)
       @received_posts = instance_to_hash(received_posts)
       check_post_count
-      @sent_posts = Post.sent_posts(current_user)
+      @sent_posts = Post.sent_posts(current_user).order('created_at DESC')
       @sent_posts = instance_to_hash(sent_posts)
     end
 
