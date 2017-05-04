@@ -1,6 +1,15 @@
 
 <%# link_to 'Write a new review', new_post_path %>
 <div class="posts index">
+  <div id="new_post">
+</div>
+  <h2> Reviews I have written </h2>
+    <h4>Add New Review</h4>
+    <br />
+    <%= react_component("PostList", props: {posts: @sent_posts, members: @users}, prerender: false) %>
+</div>
+
+<div class="posts index">
   <h2> Received Reviews </h2>
     <% if @check_number == 0 %>
       <%= react_component("ReceivedPostList", props: {posts: @received_posts}, prerender: false) %>
@@ -9,12 +18,3 @@
   <% end %>
 </div>
 
-<div class="posts index">
-  <div id="new_post">
-
-</div>
-  <h2> Reviews I have written </h2>
-    <h4>Add New Review</h4>
-    <br />
-    <%= react_component("PostList", props: {posts: @sent_posts, members: @users}, prerender: false) %>
-</div>
