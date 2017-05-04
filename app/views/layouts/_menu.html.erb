@@ -1,8 +1,7 @@
 <a href="/" style="padding:10px"><%= image_tag "PearingLogo.png" %>
 </a>
-<%= link_to("View Reviews", '/', method: :get) %>
-<%= link_to("Write A New Review", new_post_path, method: :get) %>
 
-<%= link_to("Logout", "/signout") %>
-
+<div class='logout'>
+  <%= link_to("Logout", "/signout") %>
+</div>
 
