@@ -40,7 +40,7 @@ class CalendarController < ApplicationController
     users = session.users.select { | person | person.id  != user.id }
     names = ""
     users.each do | user |
-      names = names + user.name + " " 
+      names = names + user.nickname + " " 
     end
     names
   end
