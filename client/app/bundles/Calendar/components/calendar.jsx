@@ -30,6 +30,7 @@ export default class Calendar extends React.Component {
       type: 'PUT',
       me: this,
       success:  (data) => {
+        console.log(data)
         this.setState({
           this: data
         })
