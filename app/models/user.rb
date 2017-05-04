@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
       user.email = auth['info']['email']
       user.repos_url = auth['extra']['raw_info']['repos_url']
       user.nickname = auth['info']['nickname']
