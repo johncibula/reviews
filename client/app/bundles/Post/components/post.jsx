@@ -37,12 +37,13 @@ export default class Post extends React.Component {
     return (
 
       <div className="post">
-        <button className="button3" onClick={this.showComponent}>Edit
-        </button>
+        {!this.props.received ?
+          <button className="button3" onClick={this.showComponent}>Edit
+          </button> : null}
         {/*<a href={"/posts/" + this.props.post.id}>Show</a>*/}
-        <button className="button3" onClick={this.handleDelete.bind(this,this.props.post.id)}>
+        {!this.props.received ? <button className="button3" onClick={this.handleDelete.bind(this,this.props.post.id)}>
           Delete
-        </button>
+        </button> : null}
         <PostHeader post={this.props.post} />
         <PostContent post={this.props.post} />
         <div>
