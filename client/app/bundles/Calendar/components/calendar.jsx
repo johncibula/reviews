@@ -32,7 +32,7 @@ export default class Calendar extends React.Component {
       success:  (data) => {
         console.log(data)
         this.setState({
-          this: data
+          days: data
         })
       }
     })
