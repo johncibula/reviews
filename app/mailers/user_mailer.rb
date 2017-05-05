@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
   def welcome_email(user)
     @user = user
     @url = 'localhost:3000/sessions/new' 
-    mail(to: "ppearing@gmail.com", subject: 'Welcome to Pearing!')   
+    mail(to: "rvasqz86@gmail.com", subject: 'Welcome to Pearing!')   
   end
 
   def eod_review_email(user)
