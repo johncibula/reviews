@@ -14,6 +14,16 @@ export default class PostList extends React.Component {
 
   handleClick(event) {
     this.setState({showComponent: true});
+    $.ajax({
+      url: `/posts/indextwo`,
+      type: 'GET',
+      me: this,
+      success:  (data) => {
+        this.setState({
+          posts: post
+        })
+      }
+    })
   }
 
   unshowComponent(event) {
