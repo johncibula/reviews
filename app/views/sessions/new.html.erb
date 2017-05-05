@@ -3,12 +3,11 @@
   <h1>Welcome to Pearing</h1>
   <p>Improve your agile skills and become a better coder!</p>
   <br />
-  
-  <button class="button2"> <a style="color:black; text-decoration: none"
-      <%= link_to "Sign in with Github", "/auth/github" %> 
-      <img src="https://image.flaticon.com/icons/png/128/37/37318.png" align="top" width="30" hspace="10">
-    </a>
-    </button>
+  <form method="get" action="/auth/github" style="color:black; text-decoration: none"> 
+      <button type="submit" class="button2">
+        <img src="https://image.flaticon.com/icons/png/128/37/37318.png" align="top" width="30" hspace="10">
+      Sign in with Github</button>
+  </form>
 </div>
 <br />
 <br />
