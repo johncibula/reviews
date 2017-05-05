@@ -58,8 +58,6 @@ export default class Post extends React.Component {
 
   var PostHeader = React.createClass({
     render: function() {
-      console.log('this.props.post')
-      console.log(this.props.post)
       return (
         <div className="post-header" style={{borderBottom: "1px solid black"}}>
           <h3>Rating: {this.props.post.rating}</h3>

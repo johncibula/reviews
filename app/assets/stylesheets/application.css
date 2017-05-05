@@ -257,7 +257,10 @@
   padding-top: 15px;
 
 }
-.postheader{
+.post {
+  padding: 2px
+}
+.postheader {
   border-style: solid;
   border-width: 2px;
   border-color: black;
