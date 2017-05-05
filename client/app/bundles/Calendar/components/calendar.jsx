@@ -46,10 +46,6 @@ export default class Calendar extends React.Component {
         </div>
         <div className="panel-body">
           <table style={{width: "100%"}}>
-            <tr >
-              <th style={{borderBottom: "1px solid black", padding: "5px"}}>Day</th>
-              <th style={{borderBottom: "1px solid black", padding: "5px"}}>Pair</th> 
-            </tr>
             {this.generateDays(this.state.days)}
             <br />
           </table>
