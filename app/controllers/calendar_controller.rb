@@ -11,11 +11,11 @@ class CalendarController < ApplicationController
 
   def self.pairing_schedule (user = current_user)
     user_sessions = user.pairing_sessions
-    schedule = {}
+    @schedule = {}
     user_sessions.each do | session |
-      schedule[session.day] = CalendarController.get_users(session, user)
+      @schedule[session.day] = CalendarController.get_users(session, user)
     end
-    schedule
+    @schedule
   end
 
 

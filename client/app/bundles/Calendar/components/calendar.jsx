@@ -31,11 +31,10 @@ export default class Calendar extends React.Component {
       me: this,
       success:  (data) => {
         console.log(data)
-        
+        this.setState({
+          days: data
+        })
       }
-    })
-    this.setState({
-      days: data
     })
   }
 
