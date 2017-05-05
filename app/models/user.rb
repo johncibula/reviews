@@ -45,8 +45,8 @@ class User < ActiveRecord::Base
 
   def self.send_confirmation_email(user)
      UserMailer.welcome_email(user).deliver_now
-      format.html { redirect_to(@user, notice: 'User was successfully created.') }
-      format.json { render json: @user, status: :created, location: @user }
+     # format.html { redirect_to(@user, notice: 'User was successfully created.') }
+     # format.json { render json: @user, status: :created, location: @user }
   end
 
 
