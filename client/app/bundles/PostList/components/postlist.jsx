@@ -18,6 +18,16 @@ export default class PostList extends React.Component {
 
   unshowComponent(event) {
     this.setState({showComponent: false})
+    $.ajax({
+      url: `/posts/indextwo`,
+      type: 'GET',
+      me: this,
+      success:  (data) => {
+        this.setState({
+          posts: post
+        })
+      }
+    })
   }
 
   removeItemClient(id) {

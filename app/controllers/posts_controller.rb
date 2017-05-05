@@ -14,7 +14,22 @@ class PostsController < ApplicationController
       @sent_posts = Post.sent_posts(current_user).order('created_at DESC')
       @sent_posts = instance_to_hash(sent_posts)
     end
+  end
 
+  def indextwo
+    @post = Post.new
+    @users = User.all_except(current_user)
+    @users = instance_to_hash(users)
+    if !current_user
+      redirect_to('/sessions/new')
+    else
+      @received_posts = Post.received_posts(current_user)
+      @received_posts = instance_to_hash(received_posts)
+      check_post_count
+      @sent_posts = Post.sent_posts(current_user).order('created_at DESC')
+      @sent_posts = instance_to_hash(sent_posts)
+      render json: @sent_posts
+    end
 
   end
 

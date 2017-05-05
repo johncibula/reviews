@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'home/logout'
   post 'post/edit'
   put 'calendar/index'
+  get 'post/indextwo'
 end
