@@ -26,10 +26,15 @@
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="main">
-      <%= yield %>
-
-    </div>
+      <% if current_user %>
+          <div class="mainbar">
+            <%= yield %>
+          </div>
+      <% else %>
+          <div class="main">
+            <%= yield %>
+          </div>
+      <% end %>
     <% if current_user %>
           <%= render "layouts/side_bar" %>
     <% end %>
