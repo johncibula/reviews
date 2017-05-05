@@ -61,7 +61,7 @@
 }
 .mainbar{
   float: right;
-  top:-100;
+  top:-10%;
   bottom:0;
   z-index: -1;
   width:70%;
@@ -256,4 +256,23 @@
   padding-right: 15px;
   padding-top: 15px;
 
+}
+.postheader{
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  padding: 5px;
+}
+
+.postsent{
+   /*border-style: solid;
+   border-width: 4px;
+   border-color: black;*/
+   padding: 20px;
+}
+.postrcvd{
+  /* border-style: solid;
+   border-width: 4px;
+   border-color: black;*/
+   padding: 20px;
 }
