@@ -27,7 +27,7 @@ class CalendarController < ApplicationController
     users = User.all
     weekday_indice = 0
     
-    sessions.times do
+    5.times do
       groups = users.shuffle.each_slice(group_size).to_a
       CalendarController.create_day_schedule(groups, weekday_indice)
       weekday_indice += 1
