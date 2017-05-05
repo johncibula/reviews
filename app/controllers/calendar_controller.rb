@@ -3,8 +3,8 @@ class CalendarController < ApplicationController
   def index
     CalendarController.create_weekly_schedule
     @post  = CalendarController.pairing_schedule(current_user)
-    PairingSession.destroy_all
-    UserPairingSession.destroy_all
+    #PairingSession.destroy_all
+    #UserPairingSession.destroy_all
     schedule = generate_pairs
     render json: schedule
   end
