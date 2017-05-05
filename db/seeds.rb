@@ -4,7 +4,7 @@ User.destroy_all
 User.create!({
   provider: "github",
   nickname: "Instructor",
-  email: "admintest@gmail.com",
+  email: "rvasqz86@gmail.com",
   uid: "8890808908908",
   repos_url: "https://api.github.com/users/rvasqz86/repos",
   admin: true
