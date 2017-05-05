@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :user_pairing_sessions
   has_many :pairing_sessions, :through => :user_pairing_sessions
   after_create :seed_with_reviews
+  after_create :send_email_create_jobs
+
 
   def self.create_with_omniauth(auth)
     my_user = nil
@@ -17,9 +19,12 @@ class User < ActiveRecord::Base
 
       my_user = user
       end
-      User.send_confirmation_email(my_user) 
-      User.send_5pm_email(my_user)
-      User.send_weekly_email(my_user)
+  end
+
+  def send_email_create_jobs
+    User.send_confirmation_email(user = self) 
+    User.send_5pm_email(user = self)
+    User.send_weekly_email(user = self)
   end
 
   def seed_with_reviews(user = self)
