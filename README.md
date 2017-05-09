@@ -1,38 +1,5 @@
-# Pairing
-## Running 
-`foreman start -f Procfile.dev`
-## Test Drive
-https://cp-pairing.herokuapp.com/
-## Paring Project Requirements
-#### High Level Requirement
-  * Create web applictation that will allow for pairing partners to recieve and give feedback anonymously
+# Pearing
+www.pearing.io
 
-#### MVP Level Requirements
-  * User Login / Authentication
-  * CRUD users
-  * User can CRUD reviews
-
-
-## Planning
-### Model - erd diagram
-[ERD](docs/DatabaseDiagram.jpeg)
-### Views
-[Wire frame](docs/wireframe.pdf)
-### Problems Encountered
- * Authentication
- * Planning
- * Git
-
-### Approach to problems
- * Devise
- * Communicating
- * Grit
-
-## Team members
- * Mike - PM / Route Manager / Controller implementations
- * Brian -  KIA
- * Jin - DOR
- * Raul - Generalist / Git / Branch managment
-
-[configuration help](docs/running.md)
+![Alt text](./Pearing.gif)?raw=true "Optional Title")
 
