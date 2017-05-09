@@ -1,5 +1,5 @@
 # Pearing
 www.pearing.io
 
-![Alt text](./Pearing.gif)?raw=true "Optional Title")
+![Alt text](./Pearing.gif)
 
